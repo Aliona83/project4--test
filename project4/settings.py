@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['project4-recipe.herokuapp.com', 'localhost']
-
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # Application definition
 
