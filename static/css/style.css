@@ -1,9 +1,13 @@
 body {
-    background-image: url('/static/images/Yellow\ Indian\ Food\ Mutton\ Biryani\ YouTube\ Thumbnail.png');
+    background-color: antiquewhite;
 }
 .container{
     margin-top: 20%;
     
+}
+.jambotron {
+    background-image: url('/static/images/jumbotron.webp');
+    background-size: cover;
 }
 .card-shadow {
     background-color: bisque;
