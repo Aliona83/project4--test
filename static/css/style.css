@@ -1,13 +1,16 @@
-body {
-    background-color: antiquewhite;
+
+ body {
+    background-color: bisque;
 }
 .container{
-    margin-top: 20%;
-    
+    margin-top: 3%;
 }
-.jambotron {
-    background-image: url('/static/images/jumbotron.webp');
+
+#jumbotron {
+    background-color: #445261;
+    background-repeat: no-repeat;
     background-size: cover;
+    height: 300px;
 }
 .card-shadow {
     background-color: bisque;

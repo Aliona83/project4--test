@@ -1,39 +1,42 @@
 {% extends "base.html" %}
 
-
 {% block content %}
 
-<div class="container">
-  <div class="jumbotron">
+<div class="jumbotron jumbotron-fliud" id="jumbotron">
+  <div class="container">
     <h1 class="text-center">Welcome to Recipe App</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, possimus optio! Repellat culpa reprehenderit accusantium, debitis quae veniam earum, blanditiis iste nulla placeat repellendus facere corporis aliquid ut quia soluta.Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, possimus optio! Repellat culpa reprehenderit accusantium, debitis quae veniam earum, blanditiis iste nulla placeat repellendus facere corporis aliquid ut quia soluta.</p>
   </div>
+</div>
 
-    <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-3">
-            <div class="card shadow" style="width: 17rem;">
-            <img src="/static/images/card1.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-           </div>
-         </div>
-         <div class="col-md-3">
-            <div class="card shadow" style="width: 17rem;">
-              <img src="/static/images/card2.webp" class="card-img-top" alt="...">
-              <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-        </div>
-            <div class="col-md-3">
-              <div class="card shadow" style="width: 17rem;">
-                <img src="/static/images/card3.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-            </div>
+
+<div class="row px-3 py-5 g-3">
+  <div class="col-md-4 col-6">
+    <div class="card">
+      <img src="../static/images/card1.webp" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
     </div>
+  </div>
+  <div class="col-md-4 col-6">
+    <div class="card">
+      <img src="../static/images/card2.webp" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 col-6">
+    <div class="card">
+      <img src="../static/images/card3.webp" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lbbbb.</p>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock content%}
