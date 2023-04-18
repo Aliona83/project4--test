@@ -2,12 +2,16 @@
  body {
     background-color: bisque;
 }
+
+.navbar {
+    background: linear-gradient(to left,#a67732,#f2c88b );
+}
 .container{
     margin-top: 3%;
 }
 
 #jumbotron {
-    background-color: #445261;
+    background-color: #f2c88b;
     background-repeat: no-repeat;
     background-size: cover;
     height: 300px;
