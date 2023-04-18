@@ -6,6 +6,12 @@
 .navbar {
     background: linear-gradient(to left,#a67732,#f2c88b );
 }
+.form {
+    width: 100%;
+    margin: 3% auto;
+    box-shadow: #a67732;
+    border-radius: 5px;
+}
 .container{
     margin-top: 3%;
 }
@@ -21,7 +27,7 @@
 }
 
 .btn-signup {
-    background-color: #23BBBB;
+    background-color: #a67732;
     color: #fff;
 }
 
