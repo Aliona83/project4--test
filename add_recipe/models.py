@@ -18,7 +18,7 @@ class recipes(models.Model):
     title = models.CharField(max_length=300, null=False, blank=False)
     description = models.CharField(max_length=500, null=False, blank=False)
     ingredients = RichTextField(max_length=1000, null=False, blank=False)
-    image = ResizedImageField(size=[400, None], quality=75, upload_to='add_recipe/', force_format='WEBP', blank=False, nul=False)
+    image = ResizedImageField(size=[400, None], quality=75, upload_to='add_recipe/', force_format='WEBP', blank=False, null=False)
     image_alt = models.CharField(max_length=100, null=False, blank=False)
     meal_type = models.CharField(max_length=50, choices=MEAL_TYPES, default='breakfast')
     posted_date = models.DateTimeField(auto_now_add=True)
