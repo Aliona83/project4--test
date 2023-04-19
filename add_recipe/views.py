@@ -1,5 +1,6 @@
 from django.views.generic import CreateView
 from .modules import recipes
+from .forms import RecipeForm
 
 
 # Create your views here.
