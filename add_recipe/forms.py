@@ -1,5 +1,5 @@
 from django import forms
-from djrichtextfield import RichTextWidget
+from djrichtextfield.widgets import RichTextWidget
 from .models import recipes
 
 
