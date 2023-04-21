@@ -22,10 +22,20 @@
     background-size: cover;
     height: 300px;
 }
+.card {
+    height: 90%;
+    margin-top: 1rem;
+}
 .card-shadow {
     background-color: bisque;
 }
-
+.all_recipes{
+    text-decoration: none;
+    color: black;
+}
+.all_recipes:hover {
+    cursor: pointer;
+}
 .btn-signup {
     background-color: #a67732;
     color: #fff;
