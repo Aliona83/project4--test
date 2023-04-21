@@ -5,12 +5,12 @@
     <h1 class="text-center">Recipes</h1>
 
     {% for recipe in all_recipes %}
-    <a href="#" class="all_recipes" aria-label="Click to view {{recipes.title}}">
+    <a href="#" class="recipes" aria-label="Click to view {{recipes.title}}">
         <div class="card m-3" style="width: 18rem;">
             <img src="{{recipes.image.url}}" class="card-img-top" alt="{{recipes.image_alt}}">
             <div class="card-body">
-              <h2 class="card-title">{{recipes.title}}</h2>
-              <p class="card-text">{{recipes.description}}</p>
+              <h5 class="card-title">{{add_recipe.title}}</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               
             </div>
           </div>

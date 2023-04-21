@@ -25,6 +25,7 @@
 .card {
     height: 90%;
     margin-top: 1rem;
+    margin: 1rem;
 }
 .card-shadow {
     background-color: bisque;
