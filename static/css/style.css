@@ -58,3 +58,6 @@
     color: #445261;
     text-decoration: underline;
 }
+.footer {
+    background: linear-gradient(to left,#a67732,#f2c88b )
+}
