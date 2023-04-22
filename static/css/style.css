@@ -1,6 +1,6 @@
 
  body {
-    background-color: bisque;
+    background-image: url('../images/background_image.png');
 }
 
 .navbar {
@@ -27,9 +27,7 @@
     margin-top: 1rem;
     margin: 1rem;
 }
-.card-shadow {
-    background-color: bisque;
-}
+
 .all_recipes{
     text-decoration: none;
     color: black;
@@ -45,11 +43,11 @@
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #23BBBB;
+    color: #445261;
 }
 
 .link {
-    color: #23BBBB;
+    color: #445261;
     text-decoration: none;
 }
 
