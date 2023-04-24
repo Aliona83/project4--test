@@ -5,13 +5,13 @@
     <h1 class="text-center">Recipes</h1>
 
     {% for recipe in all_recipes %}
-    <a href="#" class="recipes" aria-label="Click to view {{recipe.title}}">
-        <div class="card m-3" style="width: 18rem;">
+    <a href="{% url 'recipe_details' recipe.id %}" class="recipes" aria-label="Click to view {{recipe.title}}">
+        <div class="card m-3" style="width: 20rem;">
             <img src="{{recipe.image.url}}" class="card-img-top" alt="{{recipe.image_alt}}">
             <div class="card-body">
               <h5 class="card-title">{{recipe.title}}</h5>
               <p class="card-text">{{recipe.description|truncatechars:100}}</p>
-              
+              <p class="card-text">{{recipe.meal_type}}</p>
             </div>
           </div>
     </a>

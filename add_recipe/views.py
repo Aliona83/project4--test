@@ -20,7 +20,7 @@ class All_Recipes(ListView):
                 Q(title__icontains=query) |
                 Q(description__icontains=query) |
                 Q(instructions__icontains=query) |
-                Q(cuisine_types__icontains=query)
+                Q(meal_type__icontains=query)
             )
         else:
             recipes = self.model.objects.all()
@@ -33,7 +33,7 @@ class Each_recipe_details(DetailView):
     """
     template_name = 'add_recipe/recipe_details.html'
     model = recipes
-    context_object_name = "recipes"
+    context_object_name = "recipe"
 
 
 class AddRecipe(LoginRequiredMixin, CreateView):
