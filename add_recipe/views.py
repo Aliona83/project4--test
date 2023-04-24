@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, ListView, DetailView
+from django.views.generic import CreateView, ListView, DetailView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import recipes
 from .forms import RecipeForm
@@ -48,3 +48,15 @@ class AddRecipe(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super(AddRecipe, self).form_valid(form)
+
+
+class deleteRecipe(DeleteView):
+    model = recipes
+    success_url = 'add_recipe/'
+
+    def delete(request, recipes_id):
+        recipe = recipes.objects.get(pk=recipes_id)
+        recipes.delete()
+        return redirect('all_recipes')  
+
+        return render(request, "add_recipe/recipes_confirm_delete.html")     
