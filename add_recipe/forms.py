@@ -20,7 +20,7 @@ class RecipeForm(forms.ModelForm):
             'descriptions': 'Descriptions',
             'ingredients': 'Recipe Ingredients',
             'instructions': 'Recipe Instructions',
-            'imaage': 'Recipe Image',
+            'image': 'Recipe Image',
             'image_alt': 'Describe Image',
             'meal_type': 'Meal Type'
         }
