@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import recipes
 from .forms import RecipeForm
@@ -25,6 +25,15 @@ class All_Recipes(ListView):
         else:
             recipes = self.model.objects.all()
         return recipes
+
+
+class Each_recipe_details(DetailView):
+    """
+    Details for each recipe
+    """
+    template_name = 'add_recipe/recipe_details.html'
+    model = recipes
+    context_object_name = "recipes"
 
 
 class AddRecipe(LoginRequiredMixin, CreateView):

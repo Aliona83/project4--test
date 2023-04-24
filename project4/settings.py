@@ -33,6 +33,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['project4-recipe.herokuapp.com', 'localhost']
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -52,6 +54,7 @@ INSTALLED_APPS = [
     'djrichtextfield',
     'recipe',
     'add_recipe',
+
 ]
 
 SITE_ID = 1
@@ -73,6 +76,8 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap4'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -98,6 +103,10 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field'
+            ]
         },
     },
 ]

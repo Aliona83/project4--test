@@ -8,12 +8,12 @@
 }
 .form {
     width: 100%;
-    margin: 3% auto;
+    margin: 5% auto;
     box-shadow: #a67732;
     border-radius: 5px;
 }
 .container{
-    margin-top: 3%;
+    margin-top: 8%;
 }
 
 #jumbotron {
@@ -28,11 +28,11 @@
     margin: 1rem;
 }
 
-.all_recipes{
+.recipes{
     text-decoration: none;
     color: black;
 }
-.all_recipes:hover {
+.recipes:hover {
     cursor: pointer;
 }
 .btn-signup {
