@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, ListView, DetailView, DeleteView
+from django.views.generic import CreateView, ListView, DetailView, DeleteView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import recipes
 from .forms import RecipeForm
@@ -57,3 +57,14 @@ class deleteRecipe(DeleteView):
     def form_valid(self, form):
         messages.success(self.request, "The task was deleted successfully.")
         return super(TaskDelete, self).form_valid(form)
+
+
+class updateRecipe(UpdateView):
+    model = recipes
+    success_url = '/add_recipe/'
+    form_class = RecipeForm()
+    template_name = 'add_recipe/update_recipe.html'
+
+    def form_valid(self, form):
+        form.instance.created_by = self.request.user
+        return super().form_valid(form)
