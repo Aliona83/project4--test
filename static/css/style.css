@@ -15,7 +15,10 @@
 .container{
     margin-top: 8%;
 }
-
+img {
+    width: auto;
+    height: 320px;
+}
 #jumbotron {
     background-color: #f2c88b;
     background-repeat: no-repeat;
