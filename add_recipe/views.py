@@ -52,11 +52,8 @@ class AddRecipe(LoginRequiredMixin, CreateView):
 
 class deleteRecipe(DeleteView):
     model = recipes
-    success_url = 'add_recipe/'
-
-    def delete(request, recipes_id):
-        recipe = recipes.objects.get(pk=recipes_id)
-        recipes.delete()
-        return redirect('all_recipes')  
-
-        return render(request, "add_recipe/recipes_confirm_delete.html")     
+    success_url = '/add_recipe/'
+   
+    def form_valid(self, form):
+        messages.success(self.request, "The task was deleted successfully.")
+        return super(TaskDelete, self).form_valid(form)

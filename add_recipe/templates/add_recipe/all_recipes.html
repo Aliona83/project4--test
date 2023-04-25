@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container d-flex-row flex-wrap justify-content-center">
-    <h1 class="text-center">Recipes</h1>
+<h1 class="text-center">Recipes</h1>
+<div class="container d-md-flex flex-row flex-wrap">
+   
 
     {% for recipe in all_recipes %}
     <a href="{% url 'recipe_details' recipe.id %}" class="recipes" aria-label="Click to view {{recipe.title}}">
