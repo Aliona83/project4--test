@@ -5,6 +5,7 @@ from .forms import RecipeForm
 from django.db.models import Q
 
 
+
 class All_Recipes(ListView):
     """
     View all recipes
@@ -62,9 +63,6 @@ class deleteRecipe(DeleteView):
 class updateRecipe(UpdateView):
     model = recipes
     success_url = '/add_recipe/'
-    form_class = RecipeForm()
+    form_class = RecipeForm
     template_name = 'add_recipe/update_recipe.html'
 
-    def form_valid(self, form):
-        form.instance.created_by = self.request.user
-        return super().form_valid(form)

@@ -52,8 +52,10 @@ INSTALLED_APPS = [
     'cloudinary',
     'crispy_forms',
     'djrichtextfield',
+    'django_filters',
     'recipe',
     'add_recipe',
+
 
 ]
 
