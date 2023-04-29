@@ -2,9 +2,19 @@
 
 {% block content %}
 <h1 class="text-center">Recipes</h1>
+<form method="get">
+  {{meal_filter.form.as_p }}
+  <input type="search" value="filter">
+</form>
+{% for recipe in all_recipes %}
+<h2>
+  {{ recipe.meal_type }}
+
+  <br>
+</h2>
+{% endfor %}
 <div class="container d-md-flex flex-row flex-wrap justify-content-around">
    
-
     {% for recipe in all_recipes %}
     <a href="{% url 'recipe_details' recipe.id %}" class="recipes" aria-label="Click to view {{recipe.title}}">
         <div class="card m-3" style="width: 20rem;">
@@ -18,4 +28,5 @@
     </a>
     {% endfor%}
 </div>
+
 {% endblock%}

@@ -14,12 +14,4 @@ class RecipeAdmin(admin.ModelAdmin):
         'image'
     )
     list_filter = ('meal_type',)
-    
-
-class FilterAdmin(admin.ModelAdmin):
-    fieldsets = (
-        ('section 1', {
-            'fields': ('lunch','dinner',)
-        }),
-    )
 

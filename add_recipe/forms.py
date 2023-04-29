@@ -1,6 +1,7 @@
 from django import forms
 from djrichtextfield.widgets import RichTextWidget
 from .models import recipes
+import django_filters
 
 
 class RecipeForm(forms.ModelForm):
@@ -24,3 +25,4 @@ class RecipeForm(forms.ModelForm):
             'image_alt': 'Describe Image',
             'meal_type': 'Meal Type'
         }
+

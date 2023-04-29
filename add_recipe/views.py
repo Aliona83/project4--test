@@ -3,7 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import recipes
 from .forms import RecipeForm
 from django.db.models import Q
-
+from .filters import recipeFilter
 
 
 class All_Recipes(ListView):
@@ -66,3 +66,8 @@ class updateRecipe(UpdateView):
     form_class = RecipeForm
     template_name = 'add_recipe/update_recipe.html'
 
+
+class recipeFilter(recipeFilter):
+    model = recipes
+    filter = recipes.objects.filter(meal_type=['lunch', 'dinner', 'breakfast'])
+   

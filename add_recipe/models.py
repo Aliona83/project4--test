@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from djrichtextfield.models import RichTextField
 from django_resized import ResizedImageField
 
-
 MEAL_TYPES = (
     ('breakfast', 'Breakfast'),
     ('lunch', 'Lunch'),
@@ -28,5 +27,3 @@ class recipes(models.Model):
     class Meta:
         ordering = ['-posted_date']
 
-    def __str__(self):
-        return str(self.title)
