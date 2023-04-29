@@ -10,8 +10,6 @@
 .logo{
     height: 100px;
     width: 150px;
-
-    
 }
 
 .form {
@@ -31,7 +29,9 @@ img {
     background-color: #f2c88b;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 300px;
+    min-height: 300px;
+    
+   
 }
 .card {
     height: 90%;
