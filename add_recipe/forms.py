@@ -1,7 +1,6 @@
 from django import forms
 from djrichtextfield.widgets import RichTextWidget
 from .models import recipes
-import django_filters
 
 
 class RecipeForm(forms.ModelForm):

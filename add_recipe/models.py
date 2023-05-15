@@ -3,6 +3,10 @@ from django.contrib.auth.models import User
 from djrichtextfield.models import RichTextField
 from django_resized import ResizedImageField
 
+"""
+Filter recipes
+"""
+
 MEAL_TYPES = (
     ('breakfast', 'Breakfast'),
     ('lunch', 'Lunch'),

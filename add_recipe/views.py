@@ -3,13 +3,14 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import recipes
 from .forms import RecipeForm
 from django.db.models import Q
-from .filters import recipeFilter
+from .filters import recipesFilter
 
 
 class All_Recipes(ListView):
     """
     View all recipes
     """
+
     template_name = "add_recipe/all_recipes.html"
     model = recipes
     context_object_name = "all_recipes"
@@ -67,7 +68,11 @@ class updateRecipe(UpdateView):
     template_name = 'add_recipe/update_recipe.html'
 
 
-class recipeFilter(recipeFilter):
-    model = recipes
-    filter = recipes.objects.filter(meal_type=['lunch', 'dinner', 'breakfast'])
-   
+def recipesFilter(request):
+    context = {}
+    filtered_recipe = recipesFilter(request.GET, queryset=recipes.objects.all()
+    )
+
+    context['filtered_recipe'] = filtered_recipe
+      
+    return render(request, 'all_recipes', context=context) 
