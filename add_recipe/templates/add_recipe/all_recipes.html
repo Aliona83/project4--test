@@ -18,24 +18,27 @@
     </a>
     {% endfor%}
    
-</div>
+
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination text-center">
+    
+  
+{% if recipe.has_previous %}
+    <li class="page-item"><a class="page-link" href="?page=1">&laquo First</a></li>
+    <li class="page-item"><a class="page-link" href="?page={{ all_recipes.previous_page_number }}">Previous</a></li>
+    
+{% endif %}
+
+  <li class="page-item"><a href="#" class="page-link"> Page {{ recipe.number }} of {{ recipe.paginator.num_page }}</a></li>
+  
+{% if recipe.has_next %}
+      <li class="page-item"><a class="page-link" href="?page={{ all_recipes.next_page_number }}">Next</a></li>
+      <li class="page-item"><a class="page-link" href="?page=1">Last &raquo</a></li>
+{% endif %}
+
+</ul>
+</nav>
 
 {% endblock%}
 
-<br>
-<div>
-  Page {{ page_obj.number }}  of {{ page_obj.paginator.num_pages }}
-</div>
-
-<ul style="margin-left: 10px;" class="pagination">
-  {% if page_obj.has_previous %}
-  <li><a href="?page=1">&laquo; first</a></li>
-  <li><a href="?page={{ page_obj.previous_page_number}}">previous</a></li>
-  {% endif %}
-
-  {% if page_obj.has_next %}
-  <li><a href="?page={{ page_obj.next_page_number }}">next</a></li>
-  <li><a href="?page={{ page_obj.paginator.num_pages }}">last</a></li>
-  {% endif %}
-
-</ul>
