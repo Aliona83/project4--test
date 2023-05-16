@@ -3,7 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import recipes
 from .forms import RecipeForm
 from django.db.models import Q
-from .filters import recipesFilter
+from django.core.paginator import Paginator
 
 
 class All_Recipes(ListView):
@@ -14,6 +14,7 @@ class All_Recipes(ListView):
     template_name = "add_recipe/all_recipes.html"
     model = recipes
     context_object_name = "all_recipes"
+    paginate_by = 2
 
     def get_queryset(self, **kwargs):
         query = self.request.GET.get('q')
@@ -68,11 +69,3 @@ class updateRecipe(UpdateView):
     template_name = 'add_recipe/update_recipe.html'
 
 
-def recipesFilter(request):
-    context = {}
-    filtered_recipe = recipesFilter(request.GET, queryset=recipes.objects.all()
-    )
-
-    context['filtered_recipe'] = filtered_recipe
-      
-    return render(request, 'all_recipes', context=context) 

@@ -1,16 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-<form method="GET">
-  {{ filtered_recipe.form_as_p }}
-  
-  <input type="submit" value="press">
-</form>
-{% for recipe in filtered_recipe.qs %}
-<h3>
-  {{ recipe.meal_type }}
-</h3>
-{% endfor%}
+
+
 <h1 class="text-center">Recipes</h1>
 <div class="container d-md-flex flex-row flex-wrap justify-content-around">
     {% for recipe in all_recipes %}
@@ -29,3 +21,21 @@
 </div>
 
 {% endblock%}
+
+<br>
+<div>
+  Page {{ page_obj.number }}  of {{ page_obj.paginator.num_pages }}
+</div>
+
+<ul style="margin-left: 10px;" class="pagination">
+  {% if page_obj.has_previous %}
+  <li><a href="?page=1">&laquo; first</a></li>
+  <li><a href="?page={{ page_obj.previous_page_number}}">previous</a></li>
+  {% endif %}
+
+  {% if page_obj.has_next %}
+  <li><a href="?page={{ page_obj.next_page_number }}">next</a></li>
+  <li><a href="?page={{ page_obj.paginator.num_pages }}">last</a></li>
+  {% endif %}
+
+</ul>
