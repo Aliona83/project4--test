@@ -69,3 +69,17 @@ img {
 .footer {
     background: linear-gradient(to left,#a67732,#f2c88b )
 }
+.pagination {
+      height: 50px;
+      width: 100%;
+      margin: 80px 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+}
+.page-item.active .page-link {
+    background-color: #a67732;
+    border-color: #e6b56d;
+    color: black;
+ }     

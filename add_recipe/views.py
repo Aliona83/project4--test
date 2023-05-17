@@ -15,6 +15,7 @@ class All_Recipes(ListView):
     model = recipes
     context_object_name = "all_recipes"
     paginate_by = 2
+    queryset = recipes.objects.all()
 
     def get_queryset(self, **kwargs):
         query = self.request.GET.get('q')

@@ -4,7 +4,7 @@
 
 
 <h1 class="text-center">Recipes</h1>
-<div class="container d-md-flex flex-row flex-wrap justify-content-around">
+<div class="container d-md-flex flex-wrap justify-content-around">
     {% for recipe in all_recipes %}
     <a href="{% url 'recipe_details' recipe.id %}" class="recipes" aria-label="Click to view {{recipe.title}}">
         <div class="card m-3" style="width: 20rem;">
@@ -13,32 +13,71 @@
               <h5 class="card-title">{{recipe.title}}</h5>
               <p class="card-text">{{recipe.description|truncatechars:100}}</p>
               <p class="card-text">{{recipe.meal_type}}</p>
-            </div>
-          </div>
-    </a>
-    {% endfor%}
+            </div> 
+           
+    </a>      
+</div>
    
+    {% endfor%}
+      
+<!-- pagination starts -->
+<nav aria-label="..." class="fixed-bottom" class="position-fixed" >
+  <ul class="pagination flex-wrap justify-content-center">
+    <li class="page-item disabled">
+      {% if page_obj.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="{{ request.path }}?page={{ page_obj.previous_page_number }}">⇇</a>
+        </li>
+      {% endif %}
+      {% if page_obj.number > 3 %}
+        <li class="page-item">
+          <a class="page-link" href="{{ request.path }}?page=1">1</a>
+        </li>
+      {% endif %}
+      {% if page_obj.number > 4 %}
+          <li class="page-item">
+          <span class="page-link">....</span>
+          </li>
+      {% endif %}
+    </li>
 
+    {% for i in page_obj.paginator.page_range %}
+      {% if page_obj.number == i %}
+        <li class="page-item active">
+          <span class="page-link">
+            {{ i }}
+            <span class="sr-only"></span>
+          </span>
+        </li>
+        {% elif i > page_obj.number|add:'-3' and i < page_obj.number|add:'3' %}
+          <li class="page-item">
+            <a class="page-link" href="{{ request.path }}?page={{ i }}">{{ i }}</a>
+          </li>
+      {% endif %}
+    {% endfor %}
 
-<nav aria-label="Page navigation example">
-  <ul class="pagination text-center">
-    
-  
-{% if recipe.has_previous %}
-    <li class="page-item"><a class="page-link" href="?page=1">&laquo First</a></li>
-    <li class="page-item"><a class="page-link" href="?page={{ all_recipes.previous_page_number }}">Previous</a></li>
-    
-{% endif %}
-
-  <li class="page-item"><a href="#" class="page-link"> Page {{ recipe.number }} of {{ recipe.paginator.num_page }}</a></li>
-  
-{% if recipe.has_next %}
-      <li class="page-item"><a class="page-link" href="?page={{ all_recipes.next_page_number }}">Next</a></li>
-      <li class="page-item"><a class="page-link" href="?page=1">Last &raquo</a></li>
-{% endif %}
-
-</ul>
+    {% if page_obj.has_next %}
+      {% if page_obj.number < page_obj.paginator.num_pages|add:'-3' %}
+          <li class="page-item">
+              <span class="page-link">....</span>
+          </li>
+          <li class="page-item">
+              <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+          </li>
+      {% elif page_obj.number < page_obj.paginator.num_pages|add:'-2' %}
+          <li class="page-item">
+              <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+          </li>
+      {% endif %}  
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.next_page_number }}"> ⇉</a>
+      </li>
+    {% endif %}
+  </ul>
 </nav>
-
-{% endblock%}
-
+<!-- pagination end -->
+</div>
+ 
+  
+    
+{% endblock %}
