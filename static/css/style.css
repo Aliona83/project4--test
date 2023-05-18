@@ -78,8 +78,21 @@ img {
       align-items: center;
       
 }
-.page-item.active .page-link {
+.page-item.active {
     background-color: #a67732;
     border-color: #e6b56d;
     color: black;
  }     
+
+ .page-link {
+    background-color:#f2c88b;
+    border-color: #e6b56d;
+    color: black;
+ }
+ .btn-secondary {
+    background-color: #a67732;
+ }
+
+ .btn {
+   color: black;
+  }
