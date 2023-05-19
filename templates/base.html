@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
-<html class="h-100">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
@@ -20,10 +21,11 @@
    
     <title>Recipe App</title>
 </head>
+<!-- Navigation bar-->
 <body class="d-flex flex-column h-100">
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-md navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand"  href="{% url 'home' %}"><img class="logo" src="{% static '/images/logo.png' %}"></a>
+            <a class="navbar-brand"  href="{% url 'home' %}"><img class="logo" src="{% static '/images/logo.png' %}" alt="logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -40,9 +42,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'all_recipes' %}">Recipe library</a>
                     </li>
+    
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
+                    
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
@@ -52,11 +56,12 @@
                     </li>
                     {% endif %}
                 </ul>
-                
-            </div>
+            
+            </div>   
+             
         </div>
     </nav>
-  
+  <!-- Main content-->
     <main class="flex-shrink-0 main-bg">
 
         {% block content %}
@@ -64,6 +69,7 @@
        
         {% endblock content %}
     </main>
+    
     <!-- Footer -->
     <footer class="footer mt-auto py-3 bg-danger">
         <p class="m-0 text-center text-black">&copy;2023 Copyright</p>

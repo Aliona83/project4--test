@@ -2,33 +2,30 @@
 
 {% block content %}
 
+<!-- Search input-->
+<form class="d-flex">
+  <input name="q" type="text"  class="search mt-5 col-md-3" placeholder="Search">
+  <button class="btn btn-secondary mt-5" title="Search"><i class="fas fa-search"></i></button>
+  <a href="{% url 'all_recipes' %}" class="btn btn-secondary mt-5"  title="Refresh"><i class="fas fa-sync-alt"></i></a>
+</form>
 
-<h1 class="text-center">Recipes</h1>
+<!--Dispaly for all recipes-->
+<h1 class="text-center mt-2">Recipes</h1>
 <div class="container d-md-flex flex-wrap justify-content-around">
     {% for recipe in all_recipes %}
     <a href="{% url 'recipe_details' recipe.id %}" class="recipes" aria-label="Click to view {{recipe.title}}">
-        <div class="card m-3" style="width: 20rem;">
-            <img src="{{recipe.image.url}}" class="card-img-top" alt="{{recipe.image_alt}}">
+        <div class="card m-3" >
+            <img src="{{recipe.image.url}}" class="img-fluid" alt="{{recipe.image_alt}}">
             <div class="card-body">
               <h5 class="card-title">{{recipe.title}}</h5>
               <p class="card-text">{{recipe.description|truncatechars:100}}</p>
               <p class="card-text">{{recipe.meal_type}}</p>
             </div> 
-           
     </a>      
 </div>
    
     {% endfor%}
-      <!-- Search Box -->
-    <div class="col-xs-12 my-5">
-      <form class="form-inline my-2 my-lg-0">
-        <div class="input-group" >
-          <input name="q" type="text" class="form-control mr-sm-5" placeholder="Search">
-          <button class="btn btn-secondary" title="Search"><i class="fas fa-search"></i></button>
-          <a href="{% url 'all_recipes' %}" class="btn btn-secondary" style="margin-left: 2px;" title="Refresh"><i class="fas fa-sync-alt"></i></a>
-        </div>
-      </form>
-    </div>
+      
 <!-- pagination starts -->
 <nav aria-label="..." class="fixed-bottom" class="position-fixed" >
   <ul class="pagination flex-wrap justify-content-center">
