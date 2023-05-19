@@ -3,7 +3,7 @@
 {% block content %}
 
 <!-- Search input-->
-<form class="d-flex">
+<form class="flex">
   <input name="q" type="text"  class="search mt-5 col-md-3" placeholder="Search">
   <button class="btn btn-secondary mt-5" title="Search"><i class="fas fa-search"></i></button>
   <a href="{% url 'all_recipes' %}" class="btn btn-secondary mt-5"  title="Refresh"><i class="fas fa-sync-alt"></i></a>
@@ -11,9 +11,9 @@
 
 <!--Dispaly for all recipes-->
 <h1 class="text-center mt-2">Recipes</h1>
-<div class="container d-md-flex flex-wrap justify-content-around">
+<div class="container d-md-flex justify-content-around">
     {% for recipe in all_recipes %}
-    <a href="{% url 'recipe_details' recipe.id %}" class="recipes" aria-label="Click to view {{recipe.title}}">
+    <a href="{% url 'recipe_details' recipe.id %}" class="img-fluid" aria-label="Click to view {{recipe.title}}">
         <div class="card m-3" >
             <img src="{{recipe.image.url}}" class="img-fluid" alt="{{recipe.image_alt}}">
             <div class="card-body">
