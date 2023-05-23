@@ -39,7 +39,7 @@ img {
 
 .recipes{
     text-decoration: none;
-    color: black;
+    color: #131200;
 }
 .recipes:hover {
     cursor: pointer;
@@ -52,28 +52,21 @@ img {
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #445261;
+    color:#6A4C15 ;
+    
 }
 .link {
-    color: #445261;
+    color: #6A4C15;
     text-decoration: none;
 }
 
 .link:hover,
 .link:active {
-    color: #445261;
+    color: #6A4C15;
     text-decoration: underline;
 }
 .footer {
     background: linear-gradient(to left,#a67732,#f2c88b );
-}
-.pagination {
-      height: 50px;
-      width: 100%;
-      margin: 80px 0px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
 }
 .page-item.active .page-link {
     background-color: #a67732;
@@ -94,8 +87,12 @@ img {
     background-color: #a67732;
  }
 
+ .btn-secondary:hover {
+    background-color: #6A4C15;
+ }
+
  .btn {
-   color: black;
+   color: #131200;
   }
 .search {
     margin-left: 35rem;

@@ -6,6 +6,7 @@
      * User stories
      * Agile Methodology
      * The Scope
+  * [Deployment](#deployment) 
   *  Features 
       * Navigation
   * Design

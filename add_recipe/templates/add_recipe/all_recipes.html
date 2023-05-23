@@ -11,12 +11,12 @@
 
 <!--Dispaly for all recipes-->
 <h1 class="text-center mt-2">Recipes</h1>
-<div class="container d-md-flex justify-content-around">
+<div class="container-fluid d-inline-flex col-md-12">
     {% for recipe in all_recipes %}
     <a href="{% url 'recipe_details' recipe.id %}" class="img-fluid" aria-label="Click to view {{recipe.title}}">
-        <div class="card m-3" >
+        <div class="card m-6" >
             <img src="{{recipe.image.url}}" class="img-fluid" alt="{{recipe.image_alt}}">
-            <div class="card-body">
+            <div class="card-body-fluidd-inline-flex col-md-12">
               <h5 class="card-title">{{recipe.title}}</h5>
               <p class="card-text">{{recipe.description|truncatechars:100}}</p>
               <p class="card-text">{{recipe.meal_type}}</p>
@@ -27,8 +27,8 @@
     {% endfor%}
       
 <!-- pagination starts -->
-<nav aria-label="..." class="fixed-bottom" class="position-fixed" >
-  <ul class="pagination flex-wrap justify-content-center">
+<div class="pagination-">
+  <ul class="pagination  justify-content-center">
     <li class="page-item disabled">
       {% if page_obj.has_previous %}
         <li class="page-item">
@@ -80,7 +80,7 @@
       </li>
     {% endif %}
   </ul>
-</nav>
+</div>
 <!-- pagination end -->
 </div>
  
