@@ -1,13 +1,11 @@
 # Table of contents
 
-  * Recipe Book 
-  * Project goals
-  * UX
-     * User stories
-     * Agile Methodology
-     * The Scope
+  * [Recipe Book](#recipe-book)
+  * [Project goals](#project-goals)
+  * [UX](#ux)
+     * [User stories](#user-stories)
   * [Deployment](#deployment) 
-  *  Features 
+  * [Features ](#features)
       * Navigation
   * Design
      * Colours
@@ -15,11 +13,60 @@
      * Media
      * Wireframes
 
+# Recipe Book 
+*** 
+Recipe Book is a web app that I was building using the Django Full Stack Framework. The Recipe Book app is that allows users to be able to create new recipes, add changes for each recipe and save or delete them. By creating this app, I aimed to make it as simple as possible, so that users can use it anytime and anywhere. Every new user will have to register to become a user of this app. Users need to be logged in to get the full functionality of the app. 
+(Click here) to visit Live Site
 
- ## Deployment
+# Project Goals
+
+This application was created for people who love to cook. In creating this project my goal was to make the app easy to use. My goal was that this application could be used not only by adults but also by younger children who are just starting to learn how to cook. They can delete recipes, improve them, and add images.
+
+# UX
+ ## User Stories 
+ ***
+
+My Project was developed with agile planning. I had three columns: To Do, In Progress, and Done. This helps me to manage my project and helps me to be more flexible and adaptable to changes.
+Below are the User stories that were used in creating this project. I add 8 EPIC with labels MUST, SHOULD-HAVE.
+
+[Link for User stories](https://github.com/Aliona83/project4--test/issues)
+
+
+1 EPIC - Home Page and Navigation Bar
+
+    * As a Site User I can easily navigate around the site so that I can view different pages. As a Site User, I want to see a home page with basic information about the app.
+2 EPIC - Account registration 
+
+    * As a Site User I want to be able to create an account and log in into my app with my username and password.
+
+3 EPIC - Add CRUD functionality
+
+    * As a Site User I want to add recipes.
+    * As a Site User I want to update recipes.
+    * As a Site User I want to delete recipes from my recipe page. 
+
+4 EPIC - Create Recipe Form 
+
+   * As a Site User I want to have a recipe form where I will be able to add all ingredients, and instructions, sort by meal type and be able to add an image of the recipe.
+
+5 EPIC - Recipe page
+    
+   * As a Site User I want to have a separate page where I will be able to see all recipes that I save.
+
+6 EPIC - Pagination 
+
+   * As a Site User I want to see a number of pages in recipe page. 
+
+7 EPIC - Search Bar 
+   
+   * As a Site User I want to be able search my recipes by ingredients and by type of meals(breakfast, lunch and dinner)
+
+# Features 
+
+ # Deployment
 
 Heroku's Hosting Service
-1. Log in or create an account at Heroku.
+1. Login or create an account at Heroku.
 2. On the homepage you select the 'New' button and then select 'Create New App' from the drop-down.
 3. Give your app a unique name and choose your relevant region.
 4. In the 'Settings' tab of your app select 'Reveal Config Vars'.
