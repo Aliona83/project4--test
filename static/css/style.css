@@ -1,6 +1,6 @@
 
  body {
-    background-image: url('../images/background_image.png');
+    background-image: url('../images/background_image.webp');
 }
 
 .navbar {
@@ -18,12 +18,8 @@
     box-shadow: #a67732;
     border-radius: 5px;
 }
-.img-fluid {
-    min-width: 250px;
-    height: auto;
-}
-img {
- height: 300px;
+.img-thumbnail {
+    width: 100%;
 }
 #jumbotron {
     background-color: #f2c88b;
