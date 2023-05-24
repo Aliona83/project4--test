@@ -6,7 +6,12 @@
      * [User stories](#user-stories)
   * [Deployment](#deployment) 
   * [Features ](#features)
-      * Navigation
+      * [Navigation](#)
+      * Home page
+      * Add recipe page
+      * Recipe librery 
+      * Registration page
+      * Log In / Log Out page
   * Design
      * Colours
      * Typography
@@ -31,6 +36,8 @@ Below are the User stories that were used in creating this project. I add 8 EPIC
 
 [Link for User stories](https://github.com/Aliona83/project4--test/issues)
 
+<details>
+<summary>Click to see more</summary>
 
 1 EPIC - Home Page and Navigation Bar
 
@@ -60,7 +67,7 @@ Below are the User stories that were used in creating this project. I add 8 EPIC
 7 EPIC - Search Bar 
    
    * As a Site User I want to be able search my recipes by ingredients and by type of meals(breakfast, lunch and dinner)
-
+</details>
 # Features 
 
 
