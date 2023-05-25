@@ -6,10 +6,12 @@
      * [User stories](#user-stories)
   * [Deployment](#deployment) 
   * [Features ](#features)
-      * [Navigation](#)
+      * [Navigation](#navigation-bar)
       * Home page
       * Add recipe page
-      * Recipe librery 
+      * Recipe library
+         * Search bar 
+         * Paginations  
       * Registration page
       * Log In / Log Out page
   * Design
@@ -68,7 +70,11 @@ Below are the User stories that were used in creating this project. I add 8 EPIC
    
    * As a Site User I want to be able search my recipes by ingredients and by type of meals(breakfast, lunch and dinner)
 </details>
+
 # Features 
+ ## Navigation Bar
+ ## Home Page
+ ## Add Recipe page
 
 
 
