@@ -7,13 +7,13 @@
   * [Deployment](#deployment) 
   * [Features ](#features)
       * [Navigation](#navigation-bar)
-      * Home page
-      * Add recipe page
+      * [Home page](#home-page)
+      * Registration page
+       * Log In / Log Out page
       * Recipe library
          * Search bar 
          * Paginations  
-      * Registration page
-      * Log In / Log Out page
+      * Add recipe page
   * Design
      * Colours
      * Typography
@@ -71,9 +71,28 @@ Below are the User stories that were used in creating this project. I add 8 EPIC
    * As a Site User I want to be able search my recipes by ingredients and by type of meals(breakfast, lunch and dinner)
 </details>
 
-# Features 
+# Features  
+  ***
+<details>
+<summary>Click to see more</summary>
+
  ## Navigation Bar
+ ![](./readmeImages/navigationBar.png)
+
+ The navigation menu consists of Logo, register and Log In. The App logo was created by Canvas and is a simple Chef's cap with the text Recipe App. By clicking on the Logo, user can always return to the Home page. 
+ If the User is new, he will have to register, and if the User already exists, he can easily Log In to his recipe page. When User Log in, some links on the navigation bar will change, and the user will be able to see the recipe library, add a new recipe and Log Out. Once User logged In it will see welcome back text with his name. 
+
+ ![](./readmeImages/navigationaBarToRegister.png)
+
+ Also on the small screen the navigation menu will be changed to the burger menu which shows all the navigation links.
+ ![](./readmeImages/navigationMobile.png)
+
  ## Home Page
+![](./readmeImages/homePage.png)
+ The home page has a welcome message and a short description of the application. At the bottom are three bright images of a recipe with the small guide on what users can do with this app.
+ ## Registration page
+ ![](./readmeImages/registrationForm.png)
+ 
  ## Add Recipe page
 
 
