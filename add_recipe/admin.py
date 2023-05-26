@@ -5,7 +5,6 @@ from .models import recipes
 
 @admin.register(recipes)
 class RecipeAdmin(admin.ModelAdmin):
-    
     list_display = (
         'title',
         'meal_type',
@@ -14,4 +13,3 @@ class RecipeAdmin(admin.ModelAdmin):
         'image'
     )
     list_filter = ('meal_type',)
-

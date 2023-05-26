@@ -30,4 +30,3 @@ class recipes(models.Model):
 
     class Meta:
         ordering = ['-posted_date']
-
