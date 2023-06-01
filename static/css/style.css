@@ -99,6 +99,9 @@
     color: #a67732;
  }
 
+ a {
+    color: #131200;
+ }
 main {
     min-height: 80vh;
 }
