@@ -18,9 +18,6 @@
     box-shadow: #a67732;
     border-radius: 5px;
 }
-.img-thumbnail {
-    width: 100%;
-}
 
 #jumbotron {
     background-color: #f2c88b;
@@ -34,6 +31,7 @@
 .card {
     object-fit: cover;
     margin: 5px 5px 5px 5px;
+   
 }
 
 .recipes{
@@ -94,6 +92,12 @@
    color: #131200;
   }
 
+ h5 {
+    color: #a67732;
+ }
+ p.card-text {
+    color: #a67732;
+ }
 
 main {
     min-height: 80vh;

@@ -11,11 +11,11 @@
 
 <!--Dispaly for all recipes-->
 <h1 class="text-center mt-2">Recipes</h1>
-<div class="container col-md-6">
+<div class="container col-md-4">
     {% for recipe in all_recipes %}
-    <a href="{% url 'recipe_details' recipe.id %}" class="img-fluit" aria-label="Click to view {{recipe.title}}">
-        <div class="card" >
-            <img src="{{recipe.image.url}}" class="img-thumbnail"  height="300" width="300" alt="{{recipe.image_alt}}">
+    <a href="{% url 'recipe_details' recipe.id %}" class="img-thumbnail"  aria-label="Click to view {{recipe.title}}">
+        <div class="card text-center" >
+            <img src="{{recipe.image.url}}" class="img-thumbnail img-fluit"  height="300" width="300" alt="{{recipe.image_alt}}">
             <div class="card-body">
               <h5 class="card-title">{{recipe.title}}</h5>
               <p class="card-text">{{recipe.description|truncatechars:100}}</p>

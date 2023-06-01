@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['project4-recipe.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['8000-aliona83-project4test-cf87133ax0t.ws-eu98.gitpod.io', 'project4-recipe.herokuapp.com', 'localhost']
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 

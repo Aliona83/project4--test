@@ -3,19 +3,19 @@
 
 <div class="container ">
     <div class="recipe-details">
-        <h2 >{{ recipe.title }}</h2>
+        <h2 class="text-center" >{{ recipe.title }}</h2>
     </div>
-     <div class="recipe-image mt-3 p-1">
-        <img src="{{recipe.image.url }}" alt="{{recipe.image_alt }}">
+     <div class="recipe-image text-center">
+        <img src="{{recipe.image.url }}"  alt="{{recipe.image_alt }}" >
     </div>
     <div class="recipe-container">
         <div class="ingredients p-3">
-            <h2>Ingredients</h2>
-            <p> <i class="fa-solid fa-clipboard fa-lg"></i> <strong>{{ recipe.meal_type }}</p></strong>
+            <h2 class="text-center"> <i class="fa-solid fa-clipboard fa-lg"></i> Ingredients</h2>
+            <p class="text-center"><strong>{{ recipe.meal_type }}</p></strong>
             <p>{{ recipe.ingredients|safe }}</p>
         </div>
         <div class="instructions p-3">
-            <h2>Instructions</h2>
+            <h2 class="text-center">Instructions</h2>
             <p>{{ recipe.instructions|safe }}</p>
         </div>
     </div>
