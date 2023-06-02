@@ -2,11 +2,17 @@
 {% block content %}
 
 <!--Jumbotron-->
+{% if user.is_authenticated %}
 <div class="jumbotron-fliud mt-5 mb-5" id="jumbotron">
+  
+ {% else%} 
+
+  {% endif %}       
   <div class="container">
     <h1 class="text-center m-2 p-2">Welcome to Recipe App</h1>
     <p class="mb-5">Everyone is welcome at the Recipe App. How many times have you jotted down a recipe on a slip of paper, only to lose it when you actually need it? We all love convenience food, but one of the simplest ways to improve your health is by preparing more home-cooked meals. Here's how to get started.This App is the best way save recipes with images, you will be able to create recipes and they always will be with you . Whether you're a beginner or an experienced home cook, this apps offer a range of features to simplify meal planning, preparation, organization, and cooking.</p>
-  </div>
+  
+  </div>  
 </div>
 
 
@@ -21,7 +27,7 @@
     </div>
 
     <div class="card">
-      <img src="https://res.cloudinary.com/dqbbxy7oc/image/upload/v1685629144/static/images/card2.21dc5f14ca8b.jpg" class="card-img-top" alt="image-food">
+      <img src="https://res.cloudinary.com/dqbbxy7oc/image/upload/v1685716499/card2_in6irz.webp" class="card-img-top" alt="image-food">
       <div class="card-body">
         <h5 class="card-title text-center">Add Images</h5>
         <p class="card-text text-center">Add magic photos to each your recipes.</p>
