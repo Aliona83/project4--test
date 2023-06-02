@@ -1,26 +1,33 @@
 
+:root {
+    --earthyellow: #e6b56d;
+    --Sunset: #f2c88b;
+    --White: #ffffff;
+    --copper: #a67732;
+    --fielddrab: #6a4c15;
+    --smokyblack: #131200;
+}
+
  body {
-    background-image: url('../images/background_image.webp');
+    background-image: url("https://res.cloudinary.com/dqbbxy7oc/image/upload/v1685629143/static/images/background_image.aed1138827e3.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 
 .navbar {
-    background-color: #e6b56d ;
-}
-
-.logo{
-    height: 70px;
-    width: 100px;
+    background-color: var(--earthyellow);
 }
 
 .form {
     width: 100%;
     margin: 5% auto;
-    box-shadow: #a67732;
+    box-shadow: var(--copper);
     border-radius: 5px;
 }
 
 #jumbotron {
-    background-color: #f2c88b;
+    background-color: var(--Sunset);
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 250px;
@@ -36,71 +43,71 @@
 
 .recipes{
     text-decoration: none;
-    color: #131200;
+    color: var(--smokyblack);
 }
 .recipes:hover {
     cursor: pointer;
 }
 .btn-signup {
-    background-color: #a67732;
-    color: #fff;
+    background-color: var(--copper);
+    color: var(--White);
 }
 
 .btn-signup:hover,
 .btn-signup:active {
-    background-color: #fff;
-    color:#6A4C15 ;
+    background-color: var(--White);
+    color: var(--fielddrab) ;
     
 }
 .link {
-    color: #6A4C15;
+    color: var(--fielddrab);
     text-decoration: none;
 }
 
 .link:hover,
 .link:active {
-    color: #6A4C15;
+    color: var(--fielddrab);
     text-decoration: underline;
 }
 .footer {
     background: linear-gradient(to left,#a67732,#f2c88b );
 }
 .page-item.active .page-link {
-    background-color: #a67732;
-    border-color: #f2c88b;
+    background-color: var(--copper);
+    border-color: var(--Sunset);
 }
 .page-item.active {
-    background-color: #a67732;
-    border-color: #e6b56d;
-    color: black;
+    background-color: var(--copper);
+    border-color: var(--earthyellow);
+    color: var(--smokyblack);
  }     
 
  .page-link {
-    background-color:#f2c88b;
-    border-color: #e6b56d;
-    color: black;
+    background-color:var(--Sunset);
+    border-color: var(--earthyellow);
+    color: var(--smokyblack);
  }
  .btn-secondary {
-    background-color: #a67732;
+    background-color: var(--copper);
  }
 
  .btn-secondary:hover {
-    background-color: #6A4C15;
+    background-color: var(--fielddrab)
  }
 
  .btn {
-   color: #131200;
+   color: var(--smokyblack);
   }
 
  h5 {
-    color: #a67732;
+    color: var(--copper);
  }
  p.card-text {
-    color: #a67732;
+    color: var(--copper);
  }
 
  a {
-    color: #131200;
+    color: var(--smokyblack);
  }
 main {
     min-height: 80vh;

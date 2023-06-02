@@ -1,7 +1,7 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,11 +21,11 @@
    
     <title>Recipe App</title>
 </head>
+
 <!-- Navigation bar-->
 <body class="d-flex flex-column h-100">
-    <nav class="navbar navbar-expand-md navbar-light">
-        <div class="container-fluid">
-            <a class="navbar-brand"  href="{% url 'home' %}"><img class="logo" src="{% static 'images/logo.webp' %}" alt="logo"></a>
+    <nav class="navbar navbar-expand-lg navbar-light navbar ">
+            <a class="navbar-brand logo"  href="{% url 'home' %}">Recipe App<a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -45,7 +45,7 @@
                         
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
-                </li>
+                    </li>
                 <ul class="float-right">
                
                 <span>Welcome back {{ user.username }} !</span>
@@ -63,8 +63,9 @@
             
             </div>   
              
-        </div>
+        
     </nav>
+
   <!-- Main content-->
     <main class="flex-shrink-0 main-bg">
 
@@ -75,7 +76,7 @@
     </main>
     
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 bg-danger">
+    <footer class="footer mt-auto py-3 bg-">
         <p class="m-0 text-center text-black">&copy;2023 Copyright</p>
         <p class="m-0 text-center text-black">Follow us: <i class="fab fa-facebook-square ms-3"></i>
             <i class="fab fa-twitter-square ms-3"></i>
