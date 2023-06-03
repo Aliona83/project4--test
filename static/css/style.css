@@ -64,7 +64,6 @@
 }
 .logo {
     font-family:Georgia, 'Times New Roman', Times, serif;
-    margin-left: 10px;
     font-size: 30px;
 }
 .link {
@@ -108,10 +107,10 @@
   }
 
  h5 {
-    color: var(--copper);
+    color: var(--smokyblack);
  }
  p.card-text {
-    color: var(--copper);
+    color: var(--smokyblack);
     font-family: 'Merriweather', serif;
  }
 
