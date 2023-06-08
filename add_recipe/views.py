@@ -1,6 +1,9 @@
 from django.views.generic import CreateView, ListView, DetailView, DeleteView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import recipes
+from django.shortcuts import redirect, get_object_or_404
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 from .forms import RecipeForm
 from django.db.models import Q
 from django.core.paginator import Paginator
@@ -38,7 +41,7 @@ class Each_recipe_details(LoginRequiredMixin, DetailView):
     """
     template_name = 'add_recipe/recipe_details.html'
     model = recipes
-    context_object_name = "recipe"
+    context_object_name = "recipe" 
 
 
 class AddRecipe(LoginRequiredMixin, CreateView):
@@ -49,21 +52,31 @@ class AddRecipe(LoginRequiredMixin, CreateView):
     model = recipes
     form_class = RecipeForm
     success_url = '/add_recipe/'
+    success_message = 'You add new recipe'
     
+    def get_success_url(self):
+        return reverse("all_recipes")
+
     def test_func(self):
         obj = self.get_object()
-        return obj.author == self.request.user
-
+        return obj.user == self.request.user
+    
     def form_valid(self, form):
         form.instance.user = self.request.user
-        return super(AddRecipe, self).form_valid(form)
 
+        if form.is_valid():
+            messages.success(self.request, "You add new recipe")
+            super().form_valid(form)
+            return HttpResponseRedirect(self.get_success_url())
+        else:
+            messages.error(self, request, "Failed ")
+        
 
 class deleteRecipe(LoginRequiredMixin, DeleteView,):
     model = recipes
     success_url = '/add_recipe/'
     template_name = 'add_recipe/recipes_confirm_delete.html'
-    success_message = 'Recipe deleted successfully'
+    success_message = 'You deleted  recipe successfully'
      
     def test_func(self):
         obj = self.get_object()
@@ -79,5 +92,65 @@ class updateRecipe(LoginRequiredMixin, UpdateView):
     success_url = '/add_recipe/'
     form_class = RecipeForm
     template_name = 'add_recipe/update_recipe.html'
+    success_message = 'You deleted  recipe successfully'
+     
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+
+        if form.is_valid():
+            messages.success(self.request, "You successfully update your recipe")
+            super().form_valid(form)
+            return HttpResponseRedirect(self.get_success_url())
+        else:
+            messages.error(self, request, "Failed ")
 
 
+class AddLikes(LoginRequiredMixin):
+    model = recipes
+
+    def post(self, request, pk, *args, **kwargs):
+        post = Post.objects.get(pk=pk)
+       
+        is_dislike = False
+
+        for dislike in post.dislikes.all():
+            if dislikes == request.user:
+                is_dislike = True  
+            break
+        is_like = False
+
+        for like in post.likes.all():
+            if likes == request.user:
+                is_like = True  
+            break
+
+        if is_dislike:
+            post.dislike.remove(request.user)
+        if not is_like:
+            post.likes.add(request.user)
+
+
+class DisLike(LoginRequiredMixin):
+    def post(self, request, pk, *args, **kwargs):
+        post = Post.objects.get(pk=pk)
+       
+        is_like = False
+
+        for like in post.likes.all():
+            if likes == request.user:
+                is_like = True  
+            break
+        if is_like:
+            post.likes.remove(request.user)
+   
+            is_dislike = False
+
+        for dislike in post.dislikes.all():
+            if dislikes == request.user:
+                is_dislike = True  
+            break
+         
+        if not is_dislike:
+            post.dislikes.add(request.user)  
+        if is_dislike:
+            post.dislike.remove(request.user)  
