@@ -1,9 +1,10 @@
 from django.views.generic import CreateView, ListView, DetailView, DeleteView, UpdateView
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import recipes
 from .forms import RecipeForm
 from django.db.models import Q
 from django.core.paginator import Paginator
+from django.contrib import messages 
 
 
 class All_Recipes(ListView):
@@ -31,7 +32,7 @@ class All_Recipes(ListView):
         return recipes
 
 
-class Each_recipe_details(DetailView):
+class Each_recipe_details(LoginRequiredMixin, DetailView):
     """
     Details for each recipe
     """
@@ -48,22 +49,32 @@ class AddRecipe(LoginRequiredMixin, CreateView):
     model = recipes
     form_class = RecipeForm
     success_url = '/add_recipe/'
+    
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user
 
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super(AddRecipe, self).form_valid(form)
 
 
-class deleteRecipe(DeleteView):
+class deleteRecipe(LoginRequiredMixin, DeleteView,):
     model = recipes
     success_url = '/add_recipe/'
-   
-    def form_valid(self, form):
-        messages.success(self.request, "The task was deleted successfully.")
-        return super(TaskDelete, self).form_valid(form)
+    template_name = 'add_recipe/recipes_confirm_delete.html'
+    success_message = 'Recipe deleted successfully'
+     
+    def test_func(self):
+        obj = self.get_object()
+        return obj.user == self.request.user
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(deleteRecipe, self).delete(request, *args, **kwargs)
 
 
-class updateRecipe(UpdateView):
+class updateRecipe(LoginRequiredMixin, UpdateView):
     model = recipes
     success_url = '/add_recipe/'
     form_class = RecipeForm
