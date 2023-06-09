@@ -105,11 +105,12 @@ class updateRecipe(LoginRequiredMixin, UpdateView):
             messages.error(self, request, "Failed ")
 
 
-class AddLikes(LoginRequiredMixin):
+class AddLikes(LoginRequiredMixin, CreateView):
+    template_name = 'add_recipe/add_recipe.html'
     model = recipes
-
+    
     def post(self, request, pk, *args, **kwargs):
-        post = Post.objects.get(pk=pk)
+        post = recipes.objects.get(pk=pk)
        
         is_dislike = False
 
@@ -128,11 +129,14 @@ class AddLikes(LoginRequiredMixin):
             post.dislike.remove(request.user)
         if not is_like:
             post.likes.add(request.user)
+        
+        next = request.POST.get('next', '/')
+        return HttpResponseRedirect(next)
 
 
-class DisLike(LoginRequiredMixin):
+class DisLike(LoginRequiredMixin, CreateView):
     def post(self, request, pk, *args, **kwargs):
-        post = Post.objects.get(pk=pk)
+        post = recipes.objects.get(pk=pk)
        
         is_like = False
 
@@ -154,3 +158,6 @@ class DisLike(LoginRequiredMixin):
             post.dislikes.add(request.user)  
         if is_dislike:
             post.dislike.remove(request.user)  
+
+        next = request.POST.get('next', '/')
+        return HttpResponseRedirect(next)
