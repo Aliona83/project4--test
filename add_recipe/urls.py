@@ -5,7 +5,7 @@ from .views import AddRecipe, All_Recipes, Each_recipe_details, deleteRecipe, up
 urlpatterns = [
     path("add/", AddRecipe.as_view(), name='add_recipe'),
     path("", All_Recipes.as_view(), name="all_recipes"),
-    path("recipe_like/<int:pk>/likes", AddLikes.as_view(), name="recipe_like"),
+    path("recipe_like/<int:pk>/like", AddLikes.as_view(), name="like"),
     path("<int:pk>/dislike", DisLike.as_view(), name="dislikes"),
     path("<slug:pk>/", Each_recipe_details.as_view(), name="recipe_details"),
     path("delete/<int:pk>/", deleteRecipe.as_view(), name="delete_recipe"),
