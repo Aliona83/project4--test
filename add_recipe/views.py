@@ -10,6 +10,12 @@ from django.core.paginator import Paginator
 from django.contrib import messages 
 
 
+def likeView(request, pk):
+    post = get_object_or_404(recipes, id=request.POST.get(recipe.id))
+    post.likes.add(request.user)
+    return HttpResponseRedirect(reverse('all_recipes',args=[str(pk)]))
+
+
 class All_Recipes(ListView):
     """
     View all recipes
@@ -33,8 +39,8 @@ class All_Recipes(ListView):
         else:
             recipes = self.model.objects.all()
         return recipes
-
-
+     
+    
 class Each_recipe_details(LoginRequiredMixin, DetailView):
     """
     Details for each recipe
@@ -42,8 +48,14 @@ class Each_recipe_details(LoginRequiredMixin, DetailView):
     template_name = 'add_recipe/recipe_details.html'
     model = recipes
     context_object_name = "recipe" 
+    
+    def get_context_data(self, *args, **kwargs):
+        stuff = get_object_or_404(recipes, id=self.kwargs['pk'])
+        total_likes = stuff.total_likes()
+        context['total_likes'] = total_likes
+        return context
 
-
+    
 class AddRecipe(LoginRequiredMixin, CreateView):
     """
     Create recipe view
@@ -104,60 +116,3 @@ class updateRecipe(LoginRequiredMixin, UpdateView):
         else:
             messages.error(self, request, "Failed ")
 
-
-class AddLikes(LoginRequiredMixin, CreateView):
-    template_name = 'add_recipe/add_recipe.html'
-    model = recipes
-    
-    def post(self, request, pk, *args, **kwargs):
-        post = recipes.objects.get(pk=pk)
-       
-        is_dislike = False
-
-        for dislike in post.dislikes.all():
-            if dislikes == request.user:
-                is_dislike = True  
-            break
-        is_like = False
-
-        for like in post.likes.all():
-            if likes == request.user:
-                is_like = True  
-            break
-
-        if is_dislike:
-            post.dislike.remove(request.user)
-        if not is_like:
-            post.likes.add(request.user)
-        
-        next = request.POST.get('next', '/')
-        return HttpResponseRedirect(next)
-
-
-class DisLike(LoginRequiredMixin, CreateView):
-    def post(self, request, pk, *args, **kwargs):
-        post = recipes.objects.get(pk=pk)
-       
-        is_like = False
-
-        for like in post.likes.all():
-            if likes == request.user:
-                is_like = True  
-            break
-        if is_like:
-            post.likes.remove(request.user)
-   
-            is_dislike = False
-
-        for dislike in post.dislikes.all():
-            if dislikes == request.user:
-                is_dislike = True  
-            break
-         
-        if not is_dislike:
-            post.dislikes.add(request.user)  
-        if is_dislike:
-            post.dislike.remove(request.user)  
-
-        next = request.POST.get('next', '/')
-        return HttpResponseRedirect(next)

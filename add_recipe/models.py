@@ -28,7 +28,6 @@ class recipes(models.Model):
     meal_type = models.CharField(max_length=50, choices=MEAL_TYPES, default='breakfast')
     posted_date = models.DateTimeField(auto_now_add=True)
     likes = models.ManyToManyField(User, related_name="recipe_like", blank=True)
-    dislikes = models.ManyToManyField(User, related_name="recipe_dislike", blank=True)
 
     def number_of_likes(self):
         return self.likes.count()

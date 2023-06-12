@@ -5,11 +5,6 @@ from .models import recipes
 
 @admin.register(recipes)
 class RecipeAdmin(admin.ModelAdmin):
-    list_display = (
-        'title',
-        'meal_type',
-        'instructions',
-        'ingredients',
-        'image'
-    )
+    list_display = ('title', 'meal_type', 'instructions', 'ingredients', 'image')
     list_filter = ('meal_type',)
+    
