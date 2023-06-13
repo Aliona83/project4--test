@@ -40,9 +40,9 @@
     width: 100%;
 }
 .card {
+    display: inline-grid;
     object-fit: cover;
-    margin: 5px 5px 5px 5px;
-   
+    margin:  55px 100px;
 }
 
 .recipes{

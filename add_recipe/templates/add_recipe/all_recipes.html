@@ -3,12 +3,13 @@
 {% block content %}
 
 <!-- Search input-->
+<div class="container">
 <form class="d-flex justify-content-center">
   <input name="q" type="text"  class="search mt-5 col-md-3" placeholder="Search">
   <button class="btn btn-secondary d-inline mt-5" title="Search"><i class="fas fa-search"></i></button>
   <a href="{% url 'all_recipes' %}" class="btn btn-secondary mt-5"  title="Refresh"><i class="fas fa-sync-alt"></i></a>
 </form>
-
+</div>
 {% if messages %}
     <div class="alert alert-success text-center mt-3">
         <ul class="messages">
@@ -20,31 +21,36 @@
 {% endif %}
 <!--Dispaly for all recipes-->
 <h1 class="text-center mt-2">Recipes</h1>
-<div class="container col-md-4">
+<div class="grid-container">
     {% for recipe in all_recipes %}
-<form action="{% url 'like_recipe' recipe.pk %}"
-method="POST">
-{% csrf_token %}
-<button type="submit", name="recipe_id", value="{{ recipe.id}}", class="btn btn-secondary">Like</button>
-</form>
-    
-  
-    <a href="{% url 'recipe_details' recipe.id %}" class="img-fluit" aria-label="Click to view {{recipe.title}}"></a> 
-    <div class="card text-center" >
-            <img src="{{recipe.image.url}}" class="img-thumbnail img-fluit"  height="300" width="300" alt="{{recipe.image_alt}}">
+
+<a href="{% url 'recipe_details' recipe.id %}" class="img-fluit" aria-label="Click to view {{recipe.title}}"> 
+    <div class="card text-center">
+            <img src="{{recipe.image.url}}" class="img-thumbnail img-fluit text-centers" alt="{{recipe.image_alt}}">
             <div class="card-body">
+<!--Like button--> 
+  {{ post.number_of_likes}} Likes
+  {% if user in post.likes.all %}   
+  <a href="{% url 'like_recipe' recipe.id %}">
+  <i class="fa solit fa-heart" style="color: red;"></i>
+  </a>
+  {% else %}
+  <a href="{% url 'like_recipe' recipe.id %}">
+  <i class="fa fa-heart-o" style="color: red;"></i>
+  </a>
+{% endif %}
               <h5 class="card-title">{{recipe.title}}</h5>
               <p class="card-text">{{recipe.description|truncatechars:100}}</p>
               <p class="card-text">{{recipe.meal_type}}</p>
             </div> 
         
     </div>
-   
+</a>
     {% endfor%}
       
 <!-- pagination starts -->
-<nav aria-label="page-navigation">
-  <ul class="pagination justify-content-center">
+<div class= "pagination container justify-content-center">
+  <ul class="pagination">
     <li class="page-item disabled">
       {% if page_obj.has_previous %}
         <li class="page-item">
@@ -96,10 +102,6 @@ method="POST">
       </li>
     {% endif %}
   </ul>
-</nav>
+</div>
 <!-- pagination end -->
-
-
-  
-    
 {% endblock %}

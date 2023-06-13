@@ -11,9 +11,13 @@ from django.contrib import messages
 
 
 def likeView(request, pk):
-    post = get_object_or_404(recipes, id=request.POST.get(recipe.id))
-    post.likes.add(request.user)
-    return HttpResponseRedirect(reverse('all_recipes',args=[str(pk)]))
+    if request.user.is_authenticated:
+        post = get_object_or_404(recipes, id=pk)
+    if post.likes.filter(id=request.user.id):
+        post.likes.remove(request.user)
+    else:
+        post.likes.add(request.user) 
+    return redirect('all_recipes')
 
 
 class All_Recipes(ListView):
@@ -49,12 +53,6 @@ class Each_recipe_details(LoginRequiredMixin, DetailView):
     model = recipes
     context_object_name = "recipe" 
     
-    def get_context_data(self, *args, **kwargs):
-        stuff = get_object_or_404(recipes, id=self.kwargs['pk'])
-        total_likes = stuff.total_likes()
-        context['total_likes'] = total_likes
-        return context
-
     
 class AddRecipe(LoginRequiredMixin, CreateView):
     """

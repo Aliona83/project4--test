@@ -6,6 +6,7 @@ from .models import recipes
 class RecipeForm(forms.ModelForm):
     class Meta:
         model = recipes
+        exclude = ('likes',)
         fields = ['title', 'description', 'ingredients', 'instructions', 'image', 'image_alt', 'meal_type']
 
         ingredients = forms.CharField(widget=RichTextWidget())
