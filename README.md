@@ -4,7 +4,7 @@
   * [Project goals](#project-goals)
   * [UX](#ux)
      * [User stories](#user-stories)
-  * [Deployment](#deployment) 
+  
   * [Features ](#features)
       * [Navigation](#navigation-bar)
       * [Home page](#home-page)
@@ -13,13 +13,15 @@
       * Recipe library
          * Search bar 
          * Paginations  
+         * Like button
       * Add recipe page
   * Design
      * Colours
      * Typography
      * Media
      * Wireframes
-
+  * Testing   
+  * [Deployment](#deployment) 
 # Recipe Book 
 *** 
 Recipe Book is a web app that I was building using the Django Full Stack Framework. The Recipe Book app is that allows users to be able to create new recipes, add changes for each recipe and save or delete them. By creating this app, I aimed to make it as simple as possible, so that users can use it anytime and anywhere. Every new user will have to register to become a user of this app. Users need to be logged in to get the full functionality of the app. 

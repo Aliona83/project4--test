@@ -21,12 +21,12 @@
 {% endif %}
 <!--Dispaly for all recipes-->
 <h1 class="text-center mt-2">Recipes</h1>
-<div class="grid-container">
+<div class="container col-md-3">
     {% for recipe in all_recipes %}
 
 <a href="{% url 'recipe_details' recipe.id %}" class="img-fluit" aria-label="Click to view {{recipe.title}}"> 
-    <div class="card text-center">
-            <img src="{{recipe.image.url}}" class="img-thumbnail img-fluit text-centers" alt="{{recipe.image_alt}}">
+    <div class="card-block text-center">
+            <img src="{{recipe.image.url}}" class="img" alt="{{recipe.image_alt}}">
             <div class="card-body">
 <!--Like button--> 
   {{ post.number_of_likes}} Likes
