@@ -8,8 +8,8 @@
   * [Features ](#features)
       * [Navigation](#navigation-bar)
       * [Home page](#home-page)
-      * Registration page
-       * Log In / Log Out page
+      * [Registration page](#registration-page)
+      * [Log In / Log Out page](#registration-page)
       * Recipe library
          * Search bar 
          * Paginations  
@@ -20,7 +20,7 @@
      * Typography
      * Media
      * Wireframes
-  * Testing   
+  * [Testing](#)  
   * [Deployment](#deployment) 
 # Recipe Book 
 *** 
@@ -90,15 +90,42 @@ Below are the User stories that were used in creating this project. I add 8 EPIC
  ![](./readmeImages/navigationMobile.png)
 
  ## Home Page
-![](./readmeImages/homePage.png)
+![](./readmeDocumentation/screenshot/homePage.png)
  The home page has a welcome message and a short description of the application. At the bottom are three bright images of a recipe with the small guide on what users can do with this app.
  ## Registration page
- ![](./readmeImages/registrationForm.png)
- 
+  
+Django allauth was installed and used to create the Sign-Up, Login, and Log Out functionality and pages
+   * Sign UP
+
+The user has to fill up the fields in the registration form: username, email, and password. If the User already exists they can click on the top page Sign In button, and will be transferred to the log-in form.
+ ![](./readmeDocumentation/screenshot/registrationForm.png)
+   * Log In
+
+Log in form is similar to Sign up, only has a few fields username and a password. If the User forgotten to register as a new user,on the top of the Sign Up page there is a Sign Up link were the user can Sign Up. 
+ ![](./readmeDocumentation/screenshot/logIn.png)
+   * Success/unsuccess messages 
+
+Success messages inform the user if they already have an account, enter the wrong password or username or enter the short password by creating a new account user.
+ ![](./readmeDocumentation/screenshot/userAlreadyExist.png)
+ ![](./readmeDocumentation/screenshot/wrongPassword.png)
+ ![](./readmeDocumentation/screenshot/passwordTooShort.png)
+
+ ## Recipe library
+
+   * Search Bar
+   ![](./readmeDocumentation/screenshot/searchBar.png)
+
+   * Pagination
+    ![](./readmeDocumentation/screenshot/pagination.png)
+
+   * Like button
+    ![](./readmeDocumentation/screenshot/like.png)
+1
  ## Add Recipe page
 
+## Testing !!!!(change link)
 
-
+Details of all testing done can be viewed in depth in the [Testing.md](https://github.com/Aliona83/project4--test/tree/main/readmeDocumentation/screenshot) document. 
  # Deployment
 
 Heroku's Hosting Service
