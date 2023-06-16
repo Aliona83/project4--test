@@ -9,6 +9,6 @@ urlpatterns = [
     path("<slug:pk>/", Each_recipe_details.as_view(), name="recipe_details"),
     path("delete/<int:pk>/", deleteRecipe.as_view(), name="delete_recipe"),
     path("update/<int:pk>/", updateRecipe.as_view(), name="update_recipe"),
-    path('like/<int:pk>/', likeView, name="like_recipe"),
+    path('likeView/<int:pk>/', views.likeView, name="like_recipe"),
   
 ]

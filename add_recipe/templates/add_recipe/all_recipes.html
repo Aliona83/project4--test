@@ -21,17 +21,20 @@
 {% endif %}
 <!--Dispaly for all recipes-->
 <h1 class="text-center mt-2">Recipes</h1>
-<div class="container col-md-3">
+<div class="container-fluid">
+  <div class="row">
     {% for recipe in all_recipes %}
 
-<a href="{% url 'recipe_details' recipe.id %}" class="img-fluit" aria-label="Click to view {{recipe.title}}"> 
+<a href="{% url 'recipe_details' recipe.id %}" class="img-fluid" aria-label="Click to view {{recipe.title}}"> 
     <div class="card-block text-center">
-            <img src="{{recipe.image.url}}" class="img" alt="{{recipe.image_alt}}">
-            <div class="card-body">
+            <img src="{{recipe.image.url}}" class="img-fluid" alt="{{recipe.image_alt}}">
+<div>           
+<div class="card-body">
 <!--Like button--> 
   {{ post.number_of_likes}} Likes
-  {% if user in post.likes.all %}   
-  <a href="{% url 'like_recipe' recipe.id %}">
+
+  {% if post_is_liked %}   
+  <a href="{% url 'like_recipe' recipe_id %}">
   <i class="fa solit fa-heart" style="color: red;"></i>
   </a>
   {% else %}
@@ -43,7 +46,7 @@
               <p class="card-text">{{recipe.description|truncatechars:100}}</p>
               <p class="card-text">{{recipe.meal_type}}</p>
             </div> 
-        
+        </div> 
     </div>
 </a>
     {% endfor%}

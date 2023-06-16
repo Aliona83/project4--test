@@ -8,16 +8,16 @@ from .forms import RecipeForm
 from django.db.models import Q
 from django.core.paginator import Paginator
 from django.contrib import messages 
-
+               
 
 def likeView(request, pk):
-    if request.user.is_authenticated:
-        post = get_object_or_404(recipes, id=pk)
-    if post.likes.filter(id=request.user.id):
+    post = get_object_or_404(recipes, id=pk)
+    if post.likes.filter(id=request.user.id).exists():
         post.likes.remove(request.user)
     else:
-        post.likes.add(request.user) 
-    return redirect('all_recipes')
+        post.likes.add(request.user)
+        
+    return HttpResponseRedirect(reverse("all_recipes"))
 
 
 class All_Recipes(ListView):
@@ -43,8 +43,24 @@ class All_Recipes(ListView):
         else:
             recipes = self.model.objects.all()
         return recipes
-     
-    
+
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        recipe_object = data['object_list'].first()
+        if recipe_object is not None:
+            pk = recipe_object.pk
+        
+        likes_connected = get_object_or_404(recipes, id=pk)
+        likes_list = likes_connected.likes.all()
+        liked = False
+        if likes_list.filter(id=self.request.user.id).exists():
+            liked = True
+        
+        data['number_of_likes'] = likes_connected.number_of_likes()
+        data['post_is_liked'] = liked
+        return data
+
+
 class Each_recipe_details(LoginRequiredMixin, DetailView):
     """
     Details for each recipe
@@ -53,7 +69,7 @@ class Each_recipe_details(LoginRequiredMixin, DetailView):
     model = recipes
     context_object_name = "recipe" 
     
-    
+
 class AddRecipe(LoginRequiredMixin, CreateView):
     """
     Create recipe view
@@ -110,7 +126,5 @@ class updateRecipe(LoginRequiredMixin, UpdateView):
         if form.is_valid():
             messages.success(self.request, "You successfully update your recipe")
             super().form_valid(form)
-            return HttpResponseRedirect(self.get_success_url())
-        else:
-            messages.error(self, request, "Failed ")
+    
 
