@@ -22,9 +22,6 @@ urlpatterns = [
     path('djrichtextfield/', include('djrichtextfield.urls')),
     path('', include('recipe.urls')),
     path('add_recipe/', include('add_recipe.urls')),
-    
-   
-   
 ]
 
 

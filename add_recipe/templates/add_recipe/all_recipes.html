@@ -34,7 +34,7 @@
   {{ post.number_of_likes}} Likes
 
   {% if post_is_liked %}   
-  <a href="{% url 'like_recipe' recipe_id %}">
+  <a href="{% url 'like_recipe' recipe.pk %}">
   <i class="fa solit fa-heart" style="color: red;"></i>
   </a>
   {% else %}
