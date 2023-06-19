@@ -31,17 +31,27 @@
 <div>           
 <div class="card-body">
 <!--Like button--> 
-  {{ post.number_of_likes}} Likes
+  
 
+  <form action="{% url 'like_recipe' recipe.pk %}" method="POST">
+    {% csrf_token %}
+
+    {% if post_is_liked %}
+    <button type="submit" name="recipe.id" value="{{recipe.id}}" class="btn btn-outline-secondary"><i class="fa solit fa-heart" style="color: red;"></i></button>
+    {% else %}
+    <button type="submit" name="recipe.id" value="{{recipe.id}}" class="btn btn-outline-secondary"> <i class="fa fa-heart-o" style="color: red;"></i></button>
+    {% endif %}
+  </form>
+<!-- 
   {% if post_is_liked %}   
   <a href="{% url 'like_recipe' recipe.pk %}">
   <i class="fa solit fa-heart" style="color: red;"></i>
   </a>
   {% else %}
-  <a href="{% url 'like_recipe' recipe.id %}">
+  <a href="{% url 'like_recipe' recipe.pk %}">
   <i class="fa fa-heart-o" style="color: red;"></i>
   </a>
-{% endif %}
+{% endif %} -->
               <h5 class="card-title">{{recipe.title}}</h5>
               <p class="card-text">{{recipe.description|truncatechars:100}}</p>
               <p class="card-text">{{recipe.meal_type}}</p>

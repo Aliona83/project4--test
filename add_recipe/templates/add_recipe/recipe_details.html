@@ -9,7 +9,8 @@
         <img src="{{recipe.image.url }}"  alt="{{recipe.image_alt }}" >
     </div>
     <div class="recipe-container">
-        <div class="ingredients p-3">
+        
+        <div class="ingredients p-3 tex">
             <h2 class="text-center"> <i class="fa-solid fa-clipboard fa-lg"></i> Ingredients</h2>
             <p class="text-center"><strong>{{ recipe.meal_type }}</strong></p>
             <p>{{ recipe.ingredients|safe }}</p>

@@ -113,17 +113,22 @@ Success messages inform the user if they already have an account, enter the wron
  ## Recipe library
 
    * Search Bar
-   ![](./readmeDocumentation/screenshot/searchBar.png)
+
+     ![](./readmeDocumentation/screenshot/searchBar.png)
 
    * Pagination
+
     ![](./readmeDocumentation/screenshot/pagination.png)
 
    * Like button
+   
     ![](./readmeDocumentation/screenshot/like.png)
 1
  ## Add Recipe page
 
 ## Testing !!!!(change link)
+
+[Link to wireframes](https://github.com/Aliona83/project4--test/tree/main/readmeDocumentation/wireframes)
 
 Details of all testing done can be viewed in depth in the [Testing.md](https://github.com/Aliona83/project4--test/tree/main/readmeDocumentation/screenshot) document. 
  # Deployment
