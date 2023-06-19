@@ -10,17 +10,17 @@
       * [Home page](#home-page)
       * [Registration page](#registration-page)
       * [Log In / Log Out page](#registration-page)
-      * Recipe library
-         * Search bar 
-         * Paginations  
-         * Like button
-      * Add recipe page
+      * [Recipe library](#recipe-library)
+         * [Search bar](#search-bar) 
+         * [Paginations](#pagination)
+         * [Like button](#like-button)
+      * [Add recipe page](#add-recipe-page)
   * Design
      * Colours
      * Typography
      * Media
-     * Wireframes
-  * [Testing](#)  
+     * [Wireframes](#wireframes)
+  * [Testing](#testing)  
   * [Deployment](#deployment) 
 # Recipe Book 
 *** 
@@ -112,21 +112,26 @@ Success messages inform the user if they already have an account, enter the wron
 
  ## Recipe library
 
-   * Search Bar
+   #### Search Bar
 
+User can simple search recipes by type of meals or by recipe ingredients.
      ![](./readmeDocumentation/screenshot/searchBar.png)
 
-   * Pagination
+   #### Pagination
+
 
     ![](./readmeDocumentation/screenshot/pagination.png)
 
-   * Like button
+   ##### Like button
    
     ![](./readmeDocumentation/screenshot/like.png)
 1
  ## Add Recipe page
 
-## Testing !!!!(change link)
+## Testing 
+[Link to TESTING.md](https://github.com/Aliona83/project4--test/blob/main/TESTING.md)
+
+### Wireframes
 
 [Link to wireframes](https://github.com/Aliona83/project4--test/tree/main/readmeDocumentation/wireframes)
 

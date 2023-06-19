@@ -10,11 +10,11 @@ from django.core.paginator import Paginator
 from django.contrib import messages
 
 
-def likeView(request, pk):
+def likeView(request, pk, *args, **kwargs):
     """
     Like Recipes
     """
-    post = get_object_or_404(recipes, id=pk,)
+    post = get_object_or_404(recipes, id=pk)
     if post.likes.filter(id=request.user.id).exists():
         post.likes.remove(request.user)
     else:

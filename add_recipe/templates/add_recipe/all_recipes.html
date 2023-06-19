@@ -19,6 +19,7 @@
         </ul>
     </div>
 {% endif %}
+
 <!--Dispaly for all recipes-->
 <h1 class="text-center mt-2">Recipes</h1>
 <div class="container-fluid">
@@ -30,9 +31,8 @@
             <img src="{{recipe.image.url}}" class="img-fluid" alt="{{recipe.image_alt}}">
 <div>           
 <div class="card-body">
-<!--Like button--> 
-  
 
+<!--Like button--> 
   <form action="{% url 'like_recipe' recipe.pk %}" method="POST">
     {% csrf_token %}
 
@@ -42,16 +42,6 @@
     <button type="submit" name="recipe.id" value="{{recipe.id}}" class="btn btn-outline-secondary"> <i class="fa fa-heart-o" style="color: red;"></i></button>
     {% endif %}
   </form>
-<!-- 
-  {% if post_is_liked %}   
-  <a href="{% url 'like_recipe' recipe.pk %}">
-  <i class="fa solit fa-heart" style="color: red;"></i>
-  </a>
-  {% else %}
-  <a href="{% url 'like_recipe' recipe.pk %}">
-  <i class="fa fa-heart-o" style="color: red;"></i>
-  </a>
-{% endif %} -->
               <h5 class="card-title">{{recipe.title}}</h5>
               <p class="card-text">{{recipe.description|truncatechars:100}}</p>
               <p class="card-text">{{recipe.meal_type}}</p>
