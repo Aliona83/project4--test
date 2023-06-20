@@ -11,14 +11,14 @@
       * [Registration page](#registration-page)
       * [Log In / Log Out page](#registration-page)
       * [Recipe library](#recipe-library)
-         * [Search bar](#search-bar) 
-         * [Paginations](#pagination)
-         * [Like button](#like-button)
+      * [Search bar](#search-bar) 
+      * [Paginations](#pagination)
+      * [Like button](#like-button)
       * [Add recipe page](#add-recipe-page)
-  * Design
+  * [Design](#design)
      * Colours
      * Typography
-     * Media
+     * Images
      * [Wireframes](#wireframes)
   * [Testing](#testing)  
   * [Deployment](#deployment) 
@@ -28,10 +28,11 @@ Recipe Book is a web app that I was building using the Django Full Stack Framewo
 (Click here) to visit Live Site
 
 # Project Goals
-
+***
 This application was created for people who love to cook. In creating this project my goal was to make the app easy to use. My goal was that this application could be used not only by adults but also by younger children who are just starting to learn how to cook. They can delete recipes, improve them, and add images.
 
 # UX
+***
  ## User Stories 
  ***
 
@@ -81,61 +82,108 @@ Below are the User stories that were used in creating this project. I add 8 EPIC
  ## Navigation Bar
  ![](./readmeImages/navigationBar.png)
 
- The navigation menu consists of Logo, register and Log In. The App logo was created by Canvas and is a simple Chef's cap with the text Recipe App. By clicking on the Logo, user can always return to the Home page. 
- If the User is new, he will have to register, and if the User already exists, he can easily Log In to his recipe page. When User Log in, some links on the navigation bar will change, and the user will be able to see the recipe library, add a new recipe and Log Out. Once User logged In it will see welcome back text with his name. 
+ * The navigation menu consists of Logo-text, register and Log In. By clicking on the Logo, the user can always return to the Home page. 
+ If the User is new, he will have to register, and if the User already exists, he can easily Log In to his recipe page. When the User login, some links on the navigation bar will change, and the user will be able to see the recipe library, add a new recipe and Log Out.
 
  ![](./readmeImages/navigationaBarToRegister.png)
 
- Also on the small screen the navigation menu will be changed to the burger menu which shows all the navigation links.
- ![](./readmeImages/navigationMobile.png)
+ * Also on the small screen the navigation menu will be changed to the burger menu which shows all the navigation links.
+
+ ![](./readmeDocumentation/screenshot/burgerMenu.png)
+
 
  ## Home Page
-![](./readmeDocumentation/screenshot/homePage.png)
- The home page has a welcome message and a short description of the application. At the bottom are three bright images of a recipe with the small guide on what users can do with this app.
+ ![](./readmeDocumentation/screenshot/homePage.png)
+
+ * The home page has a welcome message and a short description of the application. At the bottom are three bright images of a recipe with the small guide on what users can do with this app.
  ## Registration page
   
-Django allauth was installed and used to create the Sign-Up, Login, and Log Out functionality and pages
+ * Django allauth was installed and used to create the Sign-Up, Login, and Log Out functionality and pages
    * Sign UP
 
-The user has to fill up the fields in the registration form: username, email, and password. If the User already exists they can click on the top page Sign In button, and will be transferred to the log-in form.
+ * The user has to fill up the fields in the registration form: username, email, and password. If the User already exists they can click on the top page Sign In button, and will be transferred to the log-in form.
  ![](./readmeDocumentation/screenshot/registrationForm.png)
    * Log In
 
-Log in form is similar to Sign up, only has a few fields username and a password. If the User forgotten to register as a new user,on the top of the Sign Up page there is a Sign Up link were the user can Sign Up. 
+ * Log in form is similar to Sign up, only has a few fields username and a password. If the User forgotten to register as a new user,on the top of the Sign Up page there is a Sign Up link were the user can Sign Up. 
  ![](./readmeDocumentation/screenshot/logIn.png)
    * Success/unsuccess messages 
 
-Success messages inform the user if they already have an account, enter the wrong password or username or enter the short password by creating a new account user.
+ * Success messages inform the user if they already have an account, enter the wrong password or username or enter the short password by creating a new account user.
  ![](./readmeDocumentation/screenshot/userAlreadyExist.png)
  ![](./readmeDocumentation/screenshot/wrongPassword.png)
  ![](./readmeDocumentation/screenshot/passwordTooShort.png)
 
  ## Recipe library
 
-   #### Search Bar
+ * This is the main page where all created recipes are saved. Under each recipe is the title of the recipe, and the type of meal.
 
-User can simple search recipes by type of meals or by recipe ingredients.
-     ![](./readmeDocumentation/screenshot/searchBar.png)
-
-   #### Pagination
+ ![](./readmeDocumentation/screenshot/recipeLibrary.png)
 
 
-    ![](./readmeDocumentation/screenshot/pagination.png)
+ * By clicking on the name of the recipe, the user will be redirected to a page where the user can see the whole recipe with descriptions and ingredients.
 
-   ##### Like button
+ ![](./readmeDocumentation/screenshot/viewRecipe.png)
+
+ * At the end of each recipe there are two buttons where the user will be able to delete the recipe or by clicking on the create button will be able to add changes to each recipe.
+
+ ![](./readmeDocumentation/screenshot/createDeleteRecipe.png)
+
+   * Search Bar
+
+ * Users can simply search for recipes by type of meal or by recipe ingredients.
+
+ ![](./readmeDocumentation/screenshot/searchBar.png)
+
+   * Pagination
+
+ * The website has a pagination, that will improve the user experience by providing a faster and more responsive interface. Pagination has a link to the next and previous page of results, it offers visitors a more quick and convenient navigation through the recipe page.
+
+ ![](./readmeDocumentation/screenshot/pagination.png)
+
+   * Like button
+
+ * Under each recipe, there is a like button where the user can like the recipe that he likes. A Like button was created in the shape of a heart. If the user liked the recipe, the heart will turn red; if the recipe is not liked, the heart will be white.
    
-    ![](./readmeDocumentation/screenshot/like.png)
-1
+ ![](./readmeDocumentation/screenshot/like.png)
+
  ## Add Recipe page
 
-## Testing 
-[Link to TESTING.md](https://github.com/Aliona83/project4--test/blob/main/TESTING.md)
+ ![](./readmeDocumentation/screenshot/addRecipeForm.png)
 
-### Wireframes
+ * Each registered user will be able to add a recipe to this application. The recipe form consists of the recipe's title, description, recipe ingredients, recipe instructions, add image and sort recipes by meal type(breakfast, lunch, dinner).
+ # Design 
+***
+## Colours
+
+ ![](./readmeDocumentation/screenshot/coloursUsed.png)
+
+  * The colour scheme was chosen by the background image of the project. I want to choose golden-brown colours so that they will blend with the background image.
+
+ For the navigation bar and footer, I used --earthyellow: #e6b56d;,--copper: #a67732; and  --Sunset: #f2c88b.
+ For all buttons that exist in the project I used  --smokyblack: #131200; and --copper: #a67732;
+ For the jumbotron background colour I used --Sunset: #f2c88b.
+ For paragraph and heading I used --smokyblack: #131200;
+ For pagination I used background colour --copper: #a67732; and for border-colour --Sunset: #f2c88b.
+
+## Typography
+
+* The font chosen for the website is a font called Merriweather. I used this font because Merriweather font is ideal for text-dense design: the letterforms have a tall x-height but remain relatively small, making for excellent readability across screen sizes while not occupying extra horizontal space. The font was found on [Google Font](https://fonts.google.com/) and imported to the website through a CSS import.
+
+## Images
+
+* All images were all taken from [Pexels](https://www.pexels.com/ru-ru/). 
+
+## Wireframes
 
 [Link to wireframes](https://github.com/Aliona83/project4--test/tree/main/readmeDocumentation/wireframes)
 
-Details of all testing done can be viewed in depth in the [Testing.md](https://github.com/Aliona83/project4--test/tree/main/readmeDocumentation/screenshot) document. 
+# Testing 
+***
+
+[Link to TESTING.md](https://github.com/Aliona83/project4--test/blob/main/TESTING.md)
+Details of all testing done can be viewed in depth in the [Testing.md](https://github.com/Aliona83/project4--test/tree/main/readmeDocumentation/screenshot) document.
+
  # Deployment
 
 Heroku's Hosting Service
