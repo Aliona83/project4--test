@@ -50,7 +50,7 @@ class All_Recipes(ListView):
         data = super().get_context_data(**kwargs)
         recipe_object = data['object_list'].first()
         if recipe_object is not None:
-            pk = recipe_object.pk
+            pk = recipe_object.id
         likes_connected = get_object_or_404(recipes, id=pk)
         likes_list = likes_connected.likes.all()
         liked = False
@@ -78,7 +78,6 @@ class AddRecipe(LoginRequiredMixin, CreateView):
     model = recipes
     form_class = RecipeForm
     success_url = '/add_recipe/'
-    success_message = 'You add new recipe'
 
     def get_success_url(self):
         return reverse("all_recipes")
@@ -91,7 +90,7 @@ class AddRecipe(LoginRequiredMixin, CreateView):
         form.instance.user = self.request.user
 
         if form.is_valid():
-            messages.success(self.request, "You add new recipe")
+            messages.success(self.request, "You successfuly add new recipe")
             super().form_valid(form)
             return HttpResponseRedirect(self.get_success_url())
         else:

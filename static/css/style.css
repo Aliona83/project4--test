@@ -96,6 +96,7 @@ a.nav-link {
 
  .btn {
    color: var(--smokyblack);
+   margin: 10px;
   }
 
  h5 {
