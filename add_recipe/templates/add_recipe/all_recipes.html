@@ -37,12 +37,12 @@
     {% csrf_token %}
 
     {% if post_is_liked %}
-    <button type="submit" name="recipe.id" value="{{recipe.id}}" class="btn btn-outline-secondary"><i class="fa solit fa-heart" style="color: red;"></i></button>
+    <button type="submit" name="recipe.id" value="{{recipe.id}}" class="btn btn-outline-secondary" aria-label="heard"><i class="fa solit fa-heart" style="color: red;"></i></button>
     {% else %}
-    <button type="submit" name="recipe.id" value="{{recipe.id}}" class="btn btn-outline-secondary"> <i class="fa fa-heart-o" style="color: red;"></i></button>
+    <button type="submit" name="recipe.id" value="{{recipe.id}}" class="btn btn-outline-secondary" aria-label="heard"><i class="fa fa-heart-o" style="color: red;"></i></button>
     {% endif %}
   </form>
-              <h5 class="card-title">{{recipe.title}}</h5>
+              <h2 class="card-title">{{recipe.title}}</h5>
               <p class="card-text">{{recipe.description|truncatechars:100}}</p>
               <p class="card-text">{{recipe.meal_type}}</p>
             </div> 
