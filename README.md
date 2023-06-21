@@ -1,3 +1,5 @@
+ ![](./readmeDocumentation/screenshot/iAmResponsive.png)
+
 # Table of contents
 
   * [Recipe Book](#recipe-book)
@@ -15,12 +17,15 @@
       * [Paginations](#pagination)
       * [Like button](#like-button)
       * [Add recipe page](#add-recipe-page)
+
   * [Design](#design)
-     * Colours
-     * Typography
-     * Images
-     * [Wireframes](#wireframes)
-  * [Testing](#testing)  
+      * [Colours](#colours)
+      * [Typography](#)
+      * [Images](#images)
+      * [Wireframes](#wireframes)
+      
+  * [Testing](#testing)
+
   * [Deployment](#deployment) 
 # Recipe Book 
 *** 

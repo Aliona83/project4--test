@@ -70,6 +70,14 @@ a.nav-link {
 }
 .footer {
     background: linear-gradient(to left,#a67732,#f2c88b );
+    margin-top: auto;
+    height: 100px;
+}
+.social-media li {
+    display: inline;
+    padding: 15px;
+    font-size: 25px;
+    margin: 5px;
 }
 .page-item.active .page-link {
     background-color: var(--copper);
