@@ -23,7 +23,7 @@
       * [Typography](#)
       * [Images](#images)
       * [Wireframes](#wireframes)
-      
+
   * [Testing](#testing)
 
   * [Deployment](#deployment) 
@@ -157,8 +157,9 @@ Below are the User stories that were used in creating this project. I add 8 EPIC
  ![](./readmeDocumentation/screenshot/addRecipeForm.png)
 
  * Each registered user will be able to add a recipe to this application. The recipe form consists of the recipe's title, description, recipe ingredients, recipe instructions, add image and sort recipes by meal type(breakfast, lunch, dinner).
- # Design 
-***
+
+# Design 
+  ***
 ## Colours
 
  ![](./readmeDocumentation/screenshot/coloursUsed.png)
@@ -182,6 +183,7 @@ Below are the User stories that were used in creating this project. I add 8 EPIC
 ## Wireframes
 
 [Link to wireframes](https://github.com/Aliona83/project4--test/tree/main/readmeDocumentation/wireframes)
+
 
 # Testing 
 ***
