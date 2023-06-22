@@ -94,7 +94,7 @@ class AddRecipe(LoginRequiredMixin, CreateView):
             super().form_valid(form)
             return HttpResponseRedirect(self.get_success_url())
         else:
-            messages.error(self, request, "Failed ")
+            messages.error(self, request, "Recipe wasn't save ")
 
 
 class deleteRecipe(LoginRequiredMixin, DeleteView,):
@@ -123,11 +123,14 @@ class updateRecipe(LoginRequiredMixin, UpdateView):
     success_url = '/add_recipe/'
     form_class = RecipeForm
     template_name = 'add_recipe/update_recipe.html'
-    success_message = 'You deleted  recipe successfully'
+    success_message = 'You update  recipe successfully'
 
+    def test_func(self):
+        obj = self.get_object()
+        return obj.user == self.request.user
+    
     def form_valid(self, form):
-        form.instance.user = self.request.user
+        response = super().form_valid(form)
 
-        if form.is_valid():
-            messages.success(self.request, "You successfully update your recipe")
-            super().form_valid(form)
+        messages.success(self.request, 'You update successful!')
+        return response
