@@ -1,4 +1,5 @@
-from django.views.generic import CreateView, ListView, DetailView, DeleteView, UpdateView
+from django.views.generic import CreateView, ListView, DetailView
+from django.views.generic import DeleteView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import recipes
 from django.shortcuts import redirect, get_object_or_404
@@ -22,7 +23,7 @@ def likeView(request, pk, *args, **kwargs):
     return HttpResponseRedirect(reverse("all_recipes"))
 
 
-class All_Recipes(ListView):
+class All_Recipes(LoginRequiredMixin, ListView):
     """
     View all recipes
     """
@@ -128,7 +129,7 @@ class updateRecipe(LoginRequiredMixin, UpdateView):
     def test_func(self):
         obj = self.get_object()
         return obj.user == self.request.user
-    
+
     def form_valid(self, form):
         response = super().form_valid(form)
 
