@@ -22,26 +22,6 @@
 .navbar {
     background-color: var(--earthyellow);
 }
-
-.form {
-    width: 100%;
-    margin: 5% auto;
-    box-shadow: var(--copper);
-    border-radius: 5px;
-}
-
-#jumbotron {
-    background-color: var(--Sunset);
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 250px;
-}
-
-
-.recipes{
-    text-decoration: none;
-    color: var(--smokyblack);
-}
 .recipes:hover {
     cursor: pointer;
 }

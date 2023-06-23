@@ -1,4 +1,3 @@
- ![](./readmeDocumentation/screenshot/iAmResponsive.png)
 
 # Table of contents
 
@@ -23,10 +22,15 @@
       * [Typography](#)
       * [Images](#images)
       * [Wireframes](#wireframes)
-
+  * [Libraries And Installed Packages](#libraries-and-installed-packages)
   * [Testing](#testing)
 
   * [Deployment](#deployment) 
+  * [Technologies Used](#technologies-used)
+  * [Credit](#credits)
+
+ ![](./readmeDocumentation/screenshot/iAmResponsive.png)
+
 # Recipe Book 
 *** 
 Recipe Book is a web app that I was building using the Django Full Stack Framework. The Recipe Book app is that allows users to be able to create new recipes, add changes for each recipe and save or delete them. By creating this app, I aimed to make it as simple as possible, so that users can use it anytime and anywhere. Every new user will have to register to become a user of this app. Users need to be logged in to get the full functionality of the app. 
@@ -158,7 +162,9 @@ Below are the User stories that were used in creating this project. I add 8 EPIC
 
  * Each registered user will be able to add a recipe to this application. The recipe form consists of the recipe's title, description, recipe ingredients, recipe instructions, add image and sort recipes by meal type(breakfast, lunch, dinner).
 
-# Design 
+</details>
+
+ # Design 
   ***
 ## Colours
 
@@ -184,14 +190,23 @@ Below are the User stories that were used in creating this project. I add 8 EPIC
 
 [Link to wireframes](https://github.com/Aliona83/project4--test/tree/main/readmeDocumentation/wireframes)
 
+# Libraries And Installed Packages
+***
+  * Django -crispy-forms - Used to render forms throughout the project.
+  * Django - allauth - Allows authentication, registration and account management in Django.
+  * Gunicorn - a Python WSGI HTTP Server for UNIX
+  * Dj3-Cloudinary-storage - Facilitates integration with Cloudinary by implementing Django Storage API.
+
 
 # Testing 
 ***
 
-[Link to TESTING.md](https://github.com/Aliona83/project4--test/blob/main/TESTING.md)
-Details of all testing done can be viewed in depth in the [Testing.md](https://github.com/Aliona83/project4--test/tree/main/readmeDocumentation/screenshot) document.
+Details of all testing done can be viewed in depth in the 
+
+[Link to TESTING.md](https://github.com/Aliona83/project4--test/tree/main/readmeDocumentation/screenshot) document.
 
  # Deployment
+ ***
 
 Heroku's Hosting Service
 1. Login or create an account at Heroku.
@@ -227,22 +242,29 @@ To Fork
 2. The fork button is found at the top of the page.
 3. The forked project will be in your repositories.
 
-## Technologies Used
-* Git Used for version control alongside GitHub.
-* GitHub Used in conjunction with Gitpod as the code editor, to store the project and utilise git version control.
-* Heroku Used to deploy and host the finished product.
-* Cloudinary Used as cloud based storage, storing any submitted media in the deployed application.
-* ElephantSQL Used to host the PostgreSQL database for the application.
-* W3C - HTMLUsed to validate all HTML code.
-* W3C - CSS Used to validate all CSS code.
-* CI PEP8 Testing Used to validate all Python code.
-* Google Fonts Used to provide the fonts used in application styling.
-* Bootstrap Used to aid implementation of styling and responsiveness.
-* Fontawesome Used to implement effective icons.
-* Google Chrome Dev Tools Used during the development to debug and test responsiveness.
-* Balsamiq Used to build both the database schema diagram and design wireframes.
+# Technologies Used
+
+* [GitHub](https://github.com/Aliona83/project4--test) - is Used in conjunction with Gitpod as the code editor, to store the project and utilise git version control.
+* [Heroku](https://dashboard.heroku.com/apps/project4-recipe/deploy/github) -  Used to deploy and host the finished product.
+* [Cloudinary](https://cloudinary.com/ip/gr-sea-gg-brand-home-base?utm_source=google&utm_medium=search&utm_campaign=goog_selfserve_brand_wk22_replicate_core_branded_keyword&utm_term=1329&campaignid=17601148700&adgroupid=141182782954&keyword=cloudinary&device=c&matchtype=e&adposition=&gad=1&gclid=CjwKCAjwhdWkBhBZEiwA1ibLmOvYU6owOOD0_4WV0wjEeSKAO26vKCB4t7DVKWyjJLhud_3K3Y0DFRoCQBIQAvD_BwE) -  Used as cloud-based storage, storing any submitted media in the deployed application.
+* [ElephantSQ](https://customer.elephantsql.com/login) - Used to host the PostgreSQL database for the application.
+* [W3C](https://validator.w3.org/) - HTML Used to validate all HTML code.
+* [W3C](https://jigsaw.w3.org/css-validator/) - CSS Used to validate all CSS code.
+* [CI PEP8](https://pep8ci.herokuapp.com/) -  Testing Used to validate all Python code.
+* [Google Fonts](https://fonts.google.com/) - Used to provide the fonts used in application styling.
+* [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/) - Used to aid the implementation of styling and responsiveness.
+* [Fontawesome](https://fontawesome.com/) - is Used to implement effective icons.
+* Google Chrome Dev Tools -  Used during the development to debug and test responsiveness.
+* [Balsamiq](https://balsamiq.com/wireframes/?gad=1&gclid=CjwKCAjwhdWkBhBZEiwA1ibLmBf4umD1_GJ4rfxmLez1jQMyL3j_-olvsWrn5Rgxvvae-sQbboRbaRoC-eAQAvD_BwE) - Used to build both the database schema diagram and design wireframes.
+* [Pexel](https://www.pexels.com/search/free/) - All mages were taken from this website.
+* [Color palette](https://coolors.co/) - Select colors for website.
+* [Ax Dev Tools](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd) - Find and fix more accessibility issues during website development with axe DevTools. 
      
-## Credits    
-* Stack Overflow
-* bbcgoodfood
-* 
+# Credits    
+* [Stack Overflow](https://try.stackoverflow.co/explore-teams/?utm_source=adwords&utm_medium=ppc&utm_campaign=kb_teams_search_brand_emea-dach&_bt=657236278309&_bk=stack+overflow&_bm=p&_bn=g&gclid=CjwKCAjwhdWkBhBZEiwA1ibLmF2ghGSQXiKfjiQcnpRL_87pacwew2yt-jYDV9_z56sxtUF-BMthsRoCB7oQAvD_BwE)
+* [BBC good food](https://www.bbcgoodfood.com/)
+* [Codemy.com](https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi) 
+* [Django documentation](https://docs.djangoproject.com/en/4.2/)
+* [LinkedIn Learning](https://www.linkedin.com/learning/paths/become-a-django-developer)
+* [E-commerce website with django](https://www.youtube.com/watch?v=YZvRrldjf1Y)
+* [Codecademy](https://www.codecademy.com/?g_network=g&g_productchannel=&g_adid=528849219280&g_locinterest=&g_keyword=codecademy&g_acctid=243-039-7011&g_adtype=&g_keywordid=kwd-41065460761&g_ifcreative=&g_campaign=account&g_locphysical=1007835&g_adgroupid=70492864474&g_productid=&g_source={sourceid}&g_merchantid=&g_placement=&g_partition=&g_campaignid=1726903838&g_ifproduct=&utm_id=t_kwd-41065460761:ag_70492864474:cp_1726903838:n_g:d_c&utm_source=google&utm_medium=paid-search&utm_term=codecademy&utm_campaign=INTL_Brand_Exact&utm_content=528849219280&g_adtype=search&g_acctid=243-039-7011&gclid=EAIaIQobChMI54PDmL2O_gIVEu7tCh3_nAP3EAAYASAAEgJWmfD_BwE)
