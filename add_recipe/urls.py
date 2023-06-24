@@ -10,5 +10,4 @@ urlpatterns = [
     path("delete/<int:pk>/", deleteRecipe.as_view(), name="delete_recipe"),
     path("update/<slug:pk>/", updateRecipe.as_view(), name="update_recipe"),
     path('likeView/<int:pk>/', views.likeView, name="like_recipe"),
-  
 ]

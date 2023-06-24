@@ -9,18 +9,23 @@ from .forms import RecipeForm
 from django.db.models import Q
 from django.core.paginator import Paginator
 from django.contrib import messages
+from allauth.account.views import LogoutView
 
 
 def likeView(request, pk, *args, **kwargs):
     """
     Like Recipes
     """
-    post = get_object_or_404(recipes, id=pk)
-    if post.likes.filter(id=request.user.id).exists():
-        post.likes.remove(request.user)
+    recipe = get_object_or_404(recipes, id=pk)
+    liked_recipes = request.user.recipe_like.all()
+    if recipe in liked_recipes:
+        recipe.likes.remove(request.user)
     else:
-        post.likes.add(request.user)
-    return HttpResponseRedirect(reverse("all_recipes"))
+        for liked_recipe in liked_recipes:
+            liked_recipe.likes.remove(request.user)
+
+    recipe.likes.add(request.user) 
+    return HttpResponseRedirect(reverse('all_recipes'))
 
 
 class All_Recipes(LoginRequiredMixin, ListView):
@@ -49,17 +54,9 @@ class All_Recipes(LoginRequiredMixin, ListView):
 
     def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)
-        recipe_object = data['object_list'].first()
-        if recipe_object is not None:
-            pk = recipe_object.id
-        likes_connected = get_object_or_404(recipes, id=pk)
-        likes_list = likes_connected.likes.all()
-        liked = False
-        if likes_list.filter(id=self.request.user.id).exists():
-            liked = True
-        data['number_of_likes'] = likes_connected.number_of_likes()
-        data['post_is_liked'] = liked
-        return data
+        for recipe in data['object_list']:
+            recipe.post_is_liked = recipe.likes.filter(id=self.request.user.id).exists()
+        return data 
 
 
 class Each_recipe_details(LoginRequiredMixin, DetailView):
@@ -80,9 +77,6 @@ class AddRecipe(LoginRequiredMixin, CreateView):
     form_class = RecipeForm
     success_url = '/add_recipe/'
 
-    def get_success_url(self):
-        return reverse("all_recipes")
-
     def test_func(self):
         obj = self.get_object()
         return obj.user == self.request.user
@@ -93,7 +87,7 @@ class AddRecipe(LoginRequiredMixin, CreateView):
         if form.is_valid():
             messages.success(self.request, "You successfuly add new recipe")
             super().form_valid(form)
-            return HttpResponseRedirect(self.get_success_url())
+            return HttpResponseRedirect(reverse('all_recipes'))
         else:
             messages.error(self, request, "Recipe wasn't save ")
 
