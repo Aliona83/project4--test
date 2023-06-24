@@ -32,13 +32,9 @@
 <div>           
 <div class="card-body">
 
-<!--Like button--> 
-<form method="POST" action="{% url 'like_recipe' recipe.id %}">
-  {% csrf_token %}
-  <button type="submit" class="like-button" name="like" value="{{ recipe.id }}">
-    {% if recipe.post_is_liked %}<i class="fa solit fa-heart" style="color: red;"></i>{% else %}<i class="fa fa-heart-o"></i>{% endif %}
-  </button>
-</form>
+
+
+
 </div>
 
               <h2 class="card-title">{{recipe.title}}</h2>

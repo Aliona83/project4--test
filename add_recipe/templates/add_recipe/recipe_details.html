@@ -8,6 +8,23 @@
      <div class="recipe-image text-center">
         <img src="{{recipe.image.url }}"  alt="{{recipe.image_alt }}" >
     </div>
+    <div class="text-center">
+        {% if resipe.is_liked %}
+            <form action="{% url 'unlike_recipe' recipe.pk %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" value={{recipe.pk}} class="unlike_recipe">
+                    <i class="fa-solid fa-heart"style="red"></i> like
+                </button>
+            </form>
+        {% else %}
+            <form action="{% url 'like_recipe' recipe.pk %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" value={{recipe.pk}} class="like_recipe">
+                    <i class="fa fa-heart-o" ></i> Unlike
+                </button>
+            </form>
+        {% endif %}
+    </div>
     <div class="recipe-container">
         
         <div class="ingredients p-3 tex">
@@ -24,5 +41,6 @@
         <a href="{% url 'update_recipe' recipe.id %}" class="btn btn-secondary w-25">Edit</a>
         <a href="{% url 'delete_recipe' recipe.id %}" class="btn btn-danger w-25">Delete</a>
     </div>
+    
 </div>
 {% endblock %}

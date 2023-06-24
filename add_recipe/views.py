@@ -12,22 +12,6 @@ from django.contrib import messages
 from allauth.account.views import LogoutView
 
 
-def likeView(request, pk, *args, **kwargs):
-    """
-    Like Recipes
-    """
-    recipe = get_object_or_404(recipes, id=pk)
-    liked_recipes = request.user.recipe_like.all()
-    if recipe in liked_recipes:
-        recipe.likes.remove(request.user)
-    else:
-        for liked_recipe in liked_recipes:
-            liked_recipe.likes.remove(request.user)
-
-    recipe.likes.add(request.user) 
-    return HttpResponseRedirect(reverse('all_recipes'))
-
-
 class All_Recipes(LoginRequiredMixin, ListView):
     """
     View all recipes
@@ -52,12 +36,6 @@ class All_Recipes(LoginRequiredMixin, ListView):
             recipes = self.model.objects.all()
         return recipes
 
-    def get_context_data(self, **kwargs):
-        data = super().get_context_data(**kwargs)
-        for recipe in data['object_list']:
-            recipe.post_is_liked = recipe.likes.filter(id=self.request.user.id).exists()
-        return data 
-
 
 class Each_recipe_details(LoginRequiredMixin, DetailView):
     """
@@ -66,6 +44,38 @@ class Each_recipe_details(LoginRequiredMixin, DetailView):
     template_name = 'add_recipe/recipe_details.html'
     model = recipes
     context_object_name = "recipe"
+
+
+def get_context_data(self, **kwargs):
+    data = super().get_context_data(**kwargs)
+    recipe = data['recipe']
+    recipe.is_liked = recipe.likes.filter(id=self.request.user.id).exists()
+    return data
+
+
+def likeView(request, recipe_pk):
+    recipe = get_object_or_404(recipes, id=recipe_pk)
+    user = request.user
+
+    if recipe.likes.filter(id=user.id).exists():
+        recipe.likes.remove(user)
+    else:
+        recipe.likes.add(user)
+
+    return HttpResponseRedirect(reverse('recipe_details', kwargs={'pk': recipe_pk}))
+
+
+def like_recipe(request, recipe_pk):
+    recipe = get_object_or_404(recipes, id=recipe_pk)
+    recipe.likes.add(request.user)
+    return HttpResponseRedirect(reverse('recipe_details', kwargs={'pk': recipe_pk}))
+
+
+def unlike_recipe(request, recipe_pk):
+    recipe = get_object_or_404(recipes, id=recipe_pk)
+    recipe.likes.remove(request.user)
+    return HttpResponseRedirect(reverse('recipe_details', kwargs={'pk': recipe_pk}))
+
 
 
 class AddRecipe(LoginRequiredMixin, CreateView):
