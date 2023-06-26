@@ -15,17 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from allauth.account.views import LoginView
 from django.contrib import messages
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),
-    path('account/login/', LoginView.as_view(), name="account_login"),
+    path('account/', include('allauth.urls')),
     path('djrichtextfield/', include('djrichtextfield.urls')),
     path('', include('recipe.urls')),
     path('add_recipe/', include('add_recipe.urls')),
+   
+    
 ]
+
 
 
     

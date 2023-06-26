@@ -12,6 +12,7 @@ from django.contrib import messages
 from allauth.account.views import LogoutView
 
 
+
 class All_Recipes(LoginRequiredMixin, ListView):
     """
     View all recipes
@@ -45,12 +46,11 @@ class Each_recipe_details(LoginRequiredMixin, DetailView):
     model = recipes
     context_object_name = "recipe"
 
-
-def get_context_data(self, **kwargs):
-    data = super().get_context_data(**kwargs)
-    recipe = data['recipe']
-    recipe.is_liked = recipe.likes.filter(id=self.request.user.id).exists()
-    return data
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        recipe = data['recipe']
+        recipe.is_liked = recipe.likes.filter(id=self.request.user.id).exists()
+        return data
 
 
 def likeView(request, recipe_pk):
@@ -75,7 +75,6 @@ def unlike_recipe(request, recipe_pk):
     recipe = get_object_or_404(recipes, id=recipe_pk)
     recipe.likes.remove(request.user)
     return HttpResponseRedirect(reverse('recipe_details', kwargs={'pk': recipe_pk}))
-
 
 
 class AddRecipe(LoginRequiredMixin, CreateView):

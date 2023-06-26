@@ -9,17 +9,17 @@
         <img src="{{recipe.image.url }}"  alt="{{recipe.image_alt }}" >
     </div>
     <div class="text-center">
-        {% if resipe.is_liked %}
+        {% if recipe.is_liked %}
             <form action="{% url 'unlike_recipe' recipe.pk %}" method="POST">
                 {% csrf_token %}
-                <button type="submit" value={{recipe.pk}} class="unlike_recipe">
-                    <i class="fa-solid fa-heart"style="red"></i> like
+                <button type="submit" value={{recipe.pk}} class="like_recipe">
+                    <i class="fa-solid fa-heart" style="color:red"></i> like
                 </button>
             </form>
         {% else %}
             <form action="{% url 'like_recipe' recipe.pk %}" method="POST">
                 {% csrf_token %}
-                <button type="submit" value={{recipe.pk}} class="like_recipe">
+                <button type="submit" value={{recipe.pk}} class="unlike_recipe">
                     <i class="fa fa-heart-o" ></i> Unlike
                 </button>
             </form>
