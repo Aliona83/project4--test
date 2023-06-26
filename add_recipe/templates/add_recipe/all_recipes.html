@@ -10,15 +10,7 @@
   <a href="{% url 'all_recipes' %}" class="btn btn-secondary mt-5"  title="Refresh"><i class="fas fa-sync-alt"></i></a>
 </form>
 </div>
-{% if messages %}
-    <div class="alert alert-success text-center mt-3">
-        <ul class="messages">
-            {% for message in messages %}
-                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    </div>
-{% endif %}
+
 
 <!--Dispaly for all recipes-->
 <h1 class="text-center mt-2">Recipes</h1>

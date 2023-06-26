@@ -4,13 +4,12 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import recipes
 from django.shortcuts import redirect, get_object_or_404
 from django.http import HttpResponseRedirect
-from django.urls import reverse
+from django.urls import reverse,reverse_lazy
 from .forms import RecipeForm
 from django.db.models import Q
 from django.core.paginator import Paginator
 from django.contrib import messages
 from allauth.account.views import LogoutView
-
 
 
 class All_Recipes(LoginRequiredMixin, ListView):
@@ -94,11 +93,14 @@ class AddRecipe(LoginRequiredMixin, CreateView):
         form.instance.user = self.request.user
 
         if form.is_valid():
-            messages.success(self.request, "You successfuly add new recipe")
             super().form_valid(form)
-            return HttpResponseRedirect(reverse('all_recipes'))
+            return HttpResponseRedirect(reverse("all_recipes"))
         else:
-            messages.error(self, request, "Recipe wasn't save ")
+            return self.form_invalid(forms)
+     
+    def get_success_url(self):
+
+        return reverse_lazy('home')
 
 
 class deleteRecipe(LoginRequiredMixin, DeleteView,):
