@@ -61,19 +61,22 @@ def likeView(request, recipe_pk):
     else:
         recipe.likes.add(user)
 
-    return HttpResponseRedirect(reverse('recipe_details',  kwargs={'pk': recipe_pk}))
+    return HttpResponseRedirect(
+        (reverse('recipe_details',  kwargs={'pk': recipe_pk})))
 
 
 def like_recipe(request, recipe_pk):
     recipe = get_object_or_404(recipes, id=recipe_pk)
     recipe.likes.add(request.user)
-    return HttpResponseRedirect(reverse('recipe_details', kwargs={'pk': recipe_pk}))
+    return HttpResponseRedirect(
+        (reverse('recipe_details', kwargs={'pk': recipe_pk})))
 
 
 def unlike_recipe(request, recipe_pk):
     recipe = get_object_or_404(recipes, id=recipe_pk)
     recipe.likes.remove(request.user)
-    return HttpResponseRedirect(reverse('recipe_details', kwargs={'pk': recipe_pk}))
+    return HttpResponseRedirect(
+        (reverse('recipe_details', kwargs={'pk': recipe_pk})))
 
 
 class AddRecipe(LoginRequiredMixin, CreateView):

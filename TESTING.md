@@ -3,11 +3,7 @@
    * HTML
    * CSS
    * PYTHON
-   ![]()
    * LIGHTHOUSE
-    * Home Page
-    ![]()
-
    * GTMETRIX 
    * Ax Dev Tools
 
@@ -23,80 +19,97 @@
 * Bugs
 
 # Validator Testing
-  ## HTML
+<details>
+<summary>Click to see more</summary>
+
+  ## HTML Validator
   * Home Page
-    ![]()
+    ![](./readmeDocumentation/screenshot/homePageValidator.png)
     * Add recipe page
-    !()[]
+    ![](./readmeDocumentation/screenshot/addRecipeValidator.png)
     * Recipe Library
     ![]()
     * Each Recipe Page
-    ![]()
+    ![](./readmeDocumentation/screenshot/addRecipeValidator.png)
+    * Update Recipe page
+    ![](./readmeDocumentation/screenshot/updateRecipeValidator.png)
     * Log In
-    ![]()
+    ![](./readmeDocumentation/screenshot/logInValidator.png)
     * Log Out
-    ![]()
+    ![](./readmeDocumentation/screenshot/logOutValidator.png)
     * Register page
-    ![]()
- ## CSS 
+    ![](./readmeDocumentation/screenshot/registerValidator.png)
+
+ ## CSS Validator
   * Css 
   ![](./readmeDocumentation/screenshot/css.validator.png)
 
   ## Python
 
+</details>
 
 ## Lighthouse
+<details>
+<summary>Click to see more</summary>
+
  * Home Page
-  * Desktop
+     * Desktop
   ![Desktop](./readmeDocumentation/screenshot/homePageDesktop.png)
-  
-  * Mobile
+     * Mobile
   ![Mobile](./readmeDocumentation/screenshot/homePageMobile.png)
  
  * Add Recipe page
-   * Desktop
-   ![]()
-   * Mobile 
-   ![]()
+     * Desktop
+   ![](./readmeDocumentation/screenshot/addRecipePageDesktop.png)
+     * Mobile 
+   ![](./readmeDocumentation/screenshot/addRecipePageMobile.png)
 
   * Recipe Library
-   * Desktop 
-   ![]()
-   * Mobile 
-   ![]()
+     * Desktop 
+   ![](./readmeDocumentation/screenshot/recipeLibraryDesktop.png)
+     * Mobile 
+   ![](./readmeDocumentation/screenshot/recipeLibraryPageMobile.png)
 
   * Register Page 
-   * Desktop 
-   ![]()
-   * Mobile 
-   ![]()
+     * Desktop 
+   ![](./readmeDocumentation/screenshot/registerPageDesktop.png)
+     * Mobile 
+   ![](./readmeDocumentation/screenshot/registerPageMobile.png)
   
   * Each Recipe Page
-   * Desktop 
-   ![]()
-   * Mobile 
-   ![]()
+     * Desktop 
+   ![](./readmeDocumentation/screenshot/eachRecipePageDesktop.png)
+     * Mobile 
+   ![](./readmeDocumentation/screenshot/eachRecipePageMobile.png)
   
   * Update Recipe Page
-   * Desktop 
-   ![]()
-   * Mobile 
-   ![]()
+     * Desktop 
+   ![](./readmeDocumentation/screenshot/updatePageDesktop.png)
+     * Mobile 
+   ![](./readmeDocumentation/screenshot/updatePageMobile.png)
 
    * Log In
-    * Desktop 
-   ![]()
-    * Mobile 
-   ![]()
+     * Desktop 
+   ![](./readmeDocumentation/screenshot/logInPageDesktop.png)
+     * Mobile 
+   ![](./readmeDocumentation/screenshot/logInPageMobile.png)
 
    * Log Out
-    * Desktop 
-   ![]()
-    * Mobile 
-   ![]()
+     * Desktop 
+   ![](./readmeDocumentation/screenshot/logOutDesktop.png)
+     * Mobile 
+   ![](./readmeDocumentation/screenshot/logOutMobile.png)
 
-  
- 
+  </details>
+
+   ## GTMETRIX 
+   ![](./readmeDocumentation/screenshot/gtMetrixTest.png)
+
+   ## Ax Dev Tools
+
+   * All pages had been checked with AX Dev Tools
+
+   ![](./readmeDocumentation/screenshot/axDevTool.png)
    # Manual Testing
 
 <details>
@@ -117,8 +130,7 @@
 |                                                         Footer                      |
 | Small screens |       Checked that all media links are visible on small devices | Pass |                                |
 | Media  Links  | Clicked on each media link opens a new page   | Pass |
-| Footer is on
- all pages      | Check all pages how the footer looks   | Pass |
+| Footer is on all pages      | Check all pages how the footer looks   | Pass |
 |                     Add Recipe Page                     |
 | Try to create a new recipe with blank fields | For this test, I want to make sure that empty fields won't let to save the recipe and return the user to empty fields.|Pass |
 | View form on different sizes of devices | Check how will look add recipe form on tablets and phones, make sure all form fields are easy to see and use| Pass. |
@@ -129,7 +141,8 @@
 | View each recipe | By clicking on a recipe title link should open the recipe with full instructions and ingredients.| Pass |
 | Delete recipe| By clicking on the delete button the User should be able to delete the recipe from the recipe library | Pass |
 | Update recipe | By clicking on the button update recipe user will be able to make changes to the recipe and successfully save it| Pass|
-| Like button | By clicking on the like button(heart) user will be able to like the recipe which he likes, heart has to be red if a user liked the recipe| Fail|
+| Like button | By clicking on the like button(heart) user will be able to like the recipe which he likes, heart has to be red if a user liked the recipe| Pass|
+| Unlike button | Click on the heart button to unlike the recipe, and the button turns to unlike | Pass|
 | Check how the page works on small devices | Check that page looks good and is able to use on tablets and phones| Pass |
 | Success messages |After deleting, update and adding recipe User gets messages/feedback| Pass |
 |Check authentication | User able to Sign Up, log in and log out | Pass |

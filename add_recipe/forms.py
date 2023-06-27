@@ -25,3 +25,4 @@ class RecipeForm(forms.ModelForm):
             'image_alt': 'Describe Image',
             'meal_type': 'Meal Type'
         }
+        
