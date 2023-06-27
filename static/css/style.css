@@ -1,7 +1,8 @@
  /* Google Font */
+ 
  @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,300&display=swap');
+ 
  :root {
-/* Typography */
 
 /* Colours */
 
@@ -25,6 +26,7 @@
 .recipes:hover {
     cursor: pointer;
 }
+
 .btn-signup {
     background-color: var(--copper);
     color: var(--White);
@@ -35,6 +37,7 @@
     background-color: var(--White);
     color: var(--fielddrab) ;
 }
+
 .logo {
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-size: 30px;
@@ -74,6 +77,12 @@ a.nav-link {
     border-color: var(--earthyellow);
     color: var(--smokyblack);
  }
+ .search {
+    margin: 8px;
+ }
+ .input-size {
+    width: 280px;
+ }
  .btn-secondary {
     background-color: var(--copper);
  }
@@ -84,7 +93,8 @@ a.nav-link {
 
  .btn {
    color: var(--smokyblack);
-   margin: 10px;
+   margin: 8px;
+   padding: 8px;
   }
 
  h5 {

@@ -94,7 +94,7 @@ class AddRecipe(LoginRequiredMixin, CreateView):
         form.instance.user = self.request.user
 
         if form.is_valid():
-            messages.success(self.request, 'You add new  recipe successfully' )
+            messages.success(self.request, 'You add new  recipe successfully')
             super().form_valid(form)
             return HttpResponseRedirect(reverse("all_recipes"))
         else:
@@ -134,7 +134,6 @@ class updateRecipe(LoginRequiredMixin, UpdateView):
         return obj.user == self.request.user
 
     def form_valid(self, form):
-        messages.success(self.request, 'You update  recipe successfully' )
+        messages.success(self.request, 'You update  recipe successfully')
         super().form_valid(form)
         return HttpResponseRedirect(reverse('all_recipes'))
-

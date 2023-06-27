@@ -3,7 +3,11 @@
    * HTML
    * CSS
    * PYTHON
+   ![]()
    * LIGHTHOUSE
+    * Home Page
+    ![]()
+
    * GTMETRIX 
    * Ax Dev Tools
 
@@ -20,60 +24,72 @@
 
 # Validator Testing
   ## HTML
-  * Home page
-  ![]()
-  * Add recipe page
-  ![]()
-  * Recipe library page
-  ![]()
-  * Register page
-  ![]()
-  * Log In
-  ![]()
-  * Each recipe page
-  ![]()
-
+  * Home Page
+    ![]()
+    * Add recipe page
+    !()[]
+    * Recipe Library
+    ![]()
+    * Each Recipe Page
+    ![]()
+    * Log In
+    ![]()
+    * Log Out
+    ![]()
+    * Register page
+    ![]()
  ## CSS 
+  * Css 
+  ![](./readmeDocumentation/screenshot/css.validator.png)
+
   ## Python
 
 
 ## Lighthouse
+ * Home Page
   * Desktop
   ![Desktop](./readmeDocumentation/screenshot/homePageDesktop.png)
   
   * Mobile
   ![Mobile](./readmeDocumentation/screenshot/homePageMobile.png)
  
- ## Add Recipe page
+ * Add Recipe page
    * Desktop
    ![]()
    * Mobile 
    ![]()
 
-  ## Recipe Library
+  * Recipe Library
    * Desktop 
    ![]()
    * Mobile 
    ![]()
 
-  ## Register Page 
+  * Register Page 
    * Desktop 
    ![]()
    * Mobile 
    ![]()
   
-  ## Each Recipe Page
+  * Each Recipe Page
+   * Desktop 
+   ![]()
+   * Mobile 
+   ![]()
+  
+  * Update Recipe Page
    * Desktop 
    ![]()
    * Mobile 
    ![]()
 
-   ## Log In
+   * Log In
     * Desktop 
    ![]()
     * Mobile 
    ![]()
-   ## Log Out
+
+   * Log Out
     * Desktop 
    ![]()
     * Mobile 

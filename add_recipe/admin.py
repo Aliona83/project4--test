@@ -7,4 +7,3 @@ from .models import recipes
 class RecipeAdmin(admin.ModelAdmin):
     list_display = ('title', 'meal_type', 'instructions', 'ingredients', 'image')
     list_filter = ('meal_type',)
-    
