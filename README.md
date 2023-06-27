@@ -15,6 +15,7 @@
       * [Search bar](#search-bar) 
       * [Paginations](#pagination)
       * [Like button](#like-button)
+      * [Success Messages](#)
       * [Add recipe page](#add-recipe-page)
 
   * [Design](#design)
@@ -150,12 +151,21 @@ Below are the User stories that were used in creating this project. I add 8 EPIC
 
  ![](./readmeDocumentation/screenshot/pagination.png)
 
-   * Like button
+   * Like/ unlike button
 
- * Under each recipe, there is a like button where the user can like the recipe that he likes. A Like button was created in the shape of a heart. If the user liked the recipe, the heart will turn red; if the recipe is not liked, the heart will be white.
+ * Under each recipe, there is a like button where the user can like the recipe that he likes or leave unlike. A Like button was created in the shape of a heart. If the user liked the recipe, the heart will turn red; if the recipe is not liked, the heart will be white un text will be unlike.
    
- ![](./readmeDocumentation/screenshot/like.png)
+ ![](./readmeDocumentation/screenshot/likeButton.png)
+ ![](./readmeDocumentation/screenshot/unlike%20button.png)
+   
+   * Success Messages
 
+  * The user will be getting success message if the recipe were successfully delete, add or updated
+
+  ![](./readmeDocumentation/screenshot/deleteRecipe.png)
+  ![](./readmeDocumentation/screenshot/addRecipe.png)
+  ![](./readmeDocumentation/screenshot/updateRecipe.png)
+ 
  ## Add Recipe page
 
  ![](./readmeDocumentation/screenshot/addRecipeForm.png)
@@ -203,7 +213,7 @@ Below are the User stories that were used in creating this project. I add 8 EPIC
 
 Details of all testing done can be viewed in depth in the 
 
-[Link to TESTING.md](https://github.com/Aliona83/project4--test/tree/main/readmeDocumentation/screenshot) document.
+[Link to TESTING.md](https://github.com/Aliona83/project4--test/blob/main/TESTING.md) document.
 
  # Deployment
  ***
