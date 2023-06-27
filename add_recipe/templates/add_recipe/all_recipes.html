@@ -5,7 +5,7 @@
 <!-- Search input-->
 <div class="container">
 <form class="d-flex justify-content-center">
-  <input name="q" type="text"  class="search mt-5 col-md-3" placeholder="Search">
+  <input name="q" type="text"  class="search d-inline mt-5 col-md-3" placeholder="Search">
   <button class="btn btn-secondary d-inline mt-5" title="Search"><i class="fas fa-search"></i></button>
   <a href="{% url 'all_recipes' %}" class="btn btn-secondary mt-5"  title="Refresh"><i class="fas fa-sync-alt"></i></a>
 </form>
@@ -23,12 +23,7 @@
             <img src="{{recipe.image.url}}" class="img-fluid" alt="{{recipe.image_alt}}" height="400" width="400">
 <div>           
 <div class="card-body">
-
-
-
-
 </div>
-
               <h2 class="card-title">{{recipe.title}}</h2>
               <p class="card-text">{{recipe.description|truncatechars:100}}</p>
               <p class="card-text">{{recipe.meal_type}}</p>

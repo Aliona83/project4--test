@@ -4,7 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import recipes
 from django.shortcuts import redirect, get_object_or_404
 from django.http import HttpResponseRedirect
-from django.urls import reverse,reverse_lazy
+from django.urls import reverse
 from .forms import RecipeForm
 from django.db.models import Q
 from django.core.paginator import Paginator
@@ -61,7 +61,7 @@ def likeView(request, recipe_pk):
     else:
         recipe.likes.add(user)
 
-    return HttpResponseRedirect(reverse('recipe_details', kwargs={'pk': recipe_pk}))
+    return HttpResponseRedirect(reverse('recipe_details',  kwargs={'pk': recipe_pk}))
 
 
 def like_recipe(request, recipe_pk):
@@ -84,6 +84,7 @@ class AddRecipe(LoginRequiredMixin, CreateView):
     model = recipes
     form_class = RecipeForm
     success_url = '/add_recipe/'
+    success_message = 'You add new  recipe successfully'
 
     def test_func(self):
         obj = self.get_object()
@@ -93,14 +94,11 @@ class AddRecipe(LoginRequiredMixin, CreateView):
         form.instance.user = self.request.user
 
         if form.is_valid():
+            messages.success(self.request, 'You add new  recipe successfully' )
             super().form_valid(form)
             return HttpResponseRedirect(reverse("all_recipes"))
         else:
             return self.form_invalid(forms)
-     
-    def get_success_url(self):
-
-        return reverse_lazy('home')
 
 
 class deleteRecipe(LoginRequiredMixin, DeleteView,):
@@ -136,7 +134,7 @@ class updateRecipe(LoginRequiredMixin, UpdateView):
         return obj.user == self.request.user
 
     def form_valid(self, form):
-        response = super().form_valid(form)
+        messages.success(self.request, 'You update  recipe successfully' )
+        super().form_valid(form)
+        return HttpResponseRedirect(reverse('all_recipes'))
 
-        messages.success(self.request, 'You update successful!')
-        return response
