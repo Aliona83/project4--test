@@ -7,7 +7,8 @@ class RecipeForm(forms.ModelForm):
     class Meta:
         model = recipes
         exclude = ('likes',)
-        fields = ['title', 'description', 'ingredients', 'instructions', 'image', 'image_alt', 'meal_type']
+        fields = ['title', 'description', 'ingredients', 'instructions',
+                  'image', 'image_alt', 'meal_type']
 
         ingredients = forms.CharField(widget=RichTextWidget())
         instructions = forms.CharField(widget=RichTextWidget())
@@ -25,4 +26,3 @@ class RecipeForm(forms.ModelForm):
             'image_alt': 'Describe Image',
             'meal_type': 'Meal Type'
         }
-        

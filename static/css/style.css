@@ -23,6 +23,10 @@
 .navbar {
     background-color: var(--earthyellow);
 }
+#jumbotron {
+ background-color: #f2c88b;
+ padding-bottom: 10px;
+}
 .recipes:hover {
     cursor: pointer;
 }

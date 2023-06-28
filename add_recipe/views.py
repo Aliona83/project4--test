@@ -1,5 +1,5 @@
-from django.views.generic import CreateView, ListView, DetailView
-from django.views.generic import DeleteView, UpdateView
+from django.views.generic import ListView, DetailView
+from django.views.generic import CreateView, DeleteView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import recipes
 from django.shortcuts import redirect, get_object_or_404
