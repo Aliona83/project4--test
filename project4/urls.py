@@ -21,7 +21,9 @@ from allauth.account import views as allauth_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('account/', include('allauth.urls')),
-    path('accounts/login/', allauth_views.LoginView.as_view(), name='account_login'),
+    path(
+        'accounts/login/',
+        allauth_views.LoginView.as_view(), name='account_login'),
     path('djrichtextfield/', include('djrichtextfield.urls')),
     path('', include('recipe.urls')),
     path('add_recipe/', include('add_recipe.urls')),

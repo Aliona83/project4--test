@@ -40,4 +40,4 @@ class recipes(models.Model):
         return self.likes.count()
 
     class Meta:
-        ordering = ['-posted_date',]
+        ordering = ['-posted_date', ]
