@@ -1,22 +1,15 @@
 # Table of Contents
  * [Validator Testing](#validator-testing)
-   * HTML
-   * CSS
-   * PYTHON
-   * LIGHTHOUSE
-   * GTMETRIX 
-   * Ax Dev Tools
+   * [HTML](#html-validator)
+   * [CSS](#css-validator)
+   * [PYTHON](#python)
+   * [LIGHTHOUSE](#lighthouse)
+   * [GTMETRIX](#gtmetrix)
+   * [Ax Dev Tools](#ax-dev-tools)
 
- * [Device Testing](#)
-    * IMac
-    * Samsung Galaxy Tablet
-    * Iphone 6
-    * Iphone 11
-    * Chrome
-    * Firefox
-
-* [Manual Testing](#manual-testing)
-* Bugs
+ * [Device Testing](#device-testing)
+ * [Manual Testing](#manual-testing)
+ * [Bugs](#bugs)
 
 # Validator Testing
 <details>
@@ -131,6 +124,24 @@
    * All pages had been checked with AX Dev Tools
 
    ![](./readmeDocumentation/screenshot/axDevTool.png)
+
+
+   # Device Testing
+     ***
+
+     The project has been checked on these devices :
+       
+    * iMac 
+    * iPad Apple
+    * MacBook Pro
+    * Samsung Galaxy Tablet
+    * Iphone 6
+    * Iphone 11
+    * Chrome
+    * Firefox
+    
+    On all these devices the project worked perfectly, and no errors were detected.
+
    # Manual Testing
 
 <details>
@@ -171,17 +182,19 @@
 
 </details>
 
+
 # Bugs 
 ***
-
 
 | Bug      |       What  Issue   |       How   Issue     Fixed      |        
 |:--------------|:--------------------------- |:---------------------------  |
 | Wrong Url path| When I click create recipe was redirecting to add recipe page | Issue fixed by changing right URL path |
-| couldn't see any add recipes in all_recipe page | Page was empty whit out any recipes | Issue was wrong spell object variable this had issue by iterate through the list of objects| 
+| Couldn't see any add recipes in all_recipe page | Page was empty whit out any recipes | Issue was wrong spell object variable this had issue by iterate through the list of objects| 
 | Page not found (404)
 No recipes match the given query| When I want to like recipe get error no recipes match query | Fixed issue by check the query parameters|
 | DisallowedHost at /add _recipe| During the work on the project changed frequently HTTP_HOST header | Was adding the right HTTP_HOST header to ALLOWED_HOSTS|
 | Success message | After the user log in or log out success massage appeared on page all_recipes | Move to display messages tag from all_recipes to base.html file|
 | Like button | Issue was that when I like one recipe I liked all recipes what was on that page | Made decision to move the like button from all_recipes to each recipe and like each recipe separately|
 
+## Unfix Bugs 
+There are no unfixed bugs.
