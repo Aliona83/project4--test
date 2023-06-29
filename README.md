@@ -131,7 +131,7 @@ Below are the User stories that were used in creating this project. I add 8 EPIC
  ![](./readmeDocumentation/screenshot/recipeLibrary.png)
 
 
- * By clicking on the name of the recipe, the user will be redirected to a page where the user can see the whole recipe with descriptions and ingredients.
+ * By clicking on the image of the recipe, the user will be redirected to a page where the user can see the whole recipe with descriptions and ingredients.
 
  ![](./readmeDocumentation/screenshot/viewRecipe.png)
 

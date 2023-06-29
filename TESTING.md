@@ -9,7 +9,7 @@
 
  * [Device Testing](#)
     * IMac
-    * Samsung Galaky Tablet
+    * Samsung Galaxy Tablet
     * Iphone 6
     * Iphone 11
     * Chrome
@@ -23,12 +23,13 @@
 <summary>Click to see more</summary>
 
   ## HTML Validator
+
   * Home Page
     ![](./readmeDocumentation/screenshot/homePageValidator.png)
     * Add recipe page
     ![](./readmeDocumentation/screenshot/addRecipeValidator.png)
     * Recipe Library
-    ![]()
+    ![](./readmeDocumentation/screenshot/allRecipesPageValidator.png)
     * Each Recipe Page
     ![](./readmeDocumentation/screenshot/addRecipeValidator.png)
     * Update Recipe page
@@ -41,14 +42,34 @@
     ![](./readmeDocumentation/screenshot/registerValidator.png)
 
  ## CSS Validator
+
   * Css 
-  ![](./readmeDocumentation/screenshot/css.validator.png)
+  ![](./readmeDocumentation/screenshot/cssValidator.png)
 
   ## Python
 
+ Add_recipe folder 
+ All available files have been checked
+  * form.py
+  ![](./readmeDocumentation/screenshot/formFile.png)
+  * model.py
+  ![](./readmeDocumentation/screenshot/modelfile.png)
+  * url.py
+  ![](./readmeDocumentation/screenshot/urlFile.png)
+
+  project4 folder
+   * url.py
+   ![](./readmeDocumentation/screenshot/projectUrl.png)
+  
+  recipe folder
+    * url.py
+    ![](./readmeDocumentation/screenshot/recipeUrl.png)
+    * view.py
+    ![](./readmeDocumentation/screenshot/recipeView.png)
 </details>
 
 ## Lighthouse
+
 <details>
 <summary>Click to see more</summary>
 
@@ -146,7 +167,21 @@
 | Check how the page works on small devices | Check that page looks good and is able to use on tablets and phones| Pass |
 | Success messages |After deleting, update and adding recipe User gets messages/feedback| Pass |
 |Check authentication | User able to Sign Up, log in and log out | Pass |
+| Security App | Without login, I wanted to go to the add recipe page, but I was redirected to the login page| Pass |
 
 </details>
 
+# Bugs 
+***
+
+
+| Bug      |       What  Issue   |       How   Issue     Fixed      |        
+|:--------------|:--------------------------- |:---------------------------  |
+| Wrong Url path| When I click create recipe was redirecting to add recipe page | Issue fixed by changing right URL path |
+| couldn't see any add recipes in all_recipe page | Page was empty whit out any recipes | Issue was wrong spell object variable this had issue by iterate through the list of objects| 
+| Page not found (404)
+No recipes match the given query| When I want to like recipe get error no recipes match query | Fixed issue by check the query parameters|
+| DisallowedHost at /add _recipe| During the work on the project changed frequently HTTP_HOST header | Was adding the right HTTP_HOST header to ALLOWED_HOSTS|
+| Success message | After the user log in or log out success massage appeared on page all_recipes | Move to display messages tag from all_recipes to base.html file|
+| Like button | Issue was that when I like one recipe I liked all recipes what was on that page | Made decision to move the like button from all_recipes to each recipe and like each recipe separately|
 

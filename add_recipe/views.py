@@ -53,6 +53,9 @@ class Each_recipe_details(LoginRequiredMixin, DetailView):
 
 
 def likeView(request, recipe_pk):
+    """
+    Like  each recipe
+    """
     recipe = get_object_or_404(recipes, id=recipe_pk)
     user = request.user
 
@@ -73,6 +76,9 @@ def like_recipe(request, recipe_pk):
 
 
 def unlike_recipe(request, recipe_pk):
+    """
+    Unlike recipe
+    """
     recipe = get_object_or_404(recipes, id=recipe_pk)
     recipe.likes.remove(request.user)
     return HttpResponseRedirect(

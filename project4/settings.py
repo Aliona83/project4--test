@@ -32,7 +32,7 @@ DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['8000-aliona83-project4test-cf87133ax0t.ws-eu101.gitpod.io',  'project4-recipe.herokuapp.com']
+ALLOWED_HOSTS = ['8000-aliona83-project4test-cf87133ax0t.ws-eu101.gitpod.io', 'project4-recipe.herokuapp.com']
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 
@@ -180,4 +180,3 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
